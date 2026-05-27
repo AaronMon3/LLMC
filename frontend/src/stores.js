@@ -25,19 +25,19 @@ export const PROVIDERS = {
   openai: { nombre: 'OpenAI', modelo: 'gpt-4o-mini', urlKey: 'https://platform.openai.com/api-keys' },
 };
 
-export const llmConfig = persistente('cocinai_llm_config', {
+export const llmConfig = persistente('llmc_llm_config', {
   provider: 'groq',
   keys: { groq: '', claude: '', openai: '' },
 });
 
-export const favoritos = persistente('cocinai_favoritos', []);
-export const historial = persistente('cocinai_historial', []);
+export const favoritos = persistente('llmc_favoritos', []);
+export const historial = persistente('llmc_historial', []);
 
-export const despensa = persistente('cocinai_despensa', []);
-export const restricciones = persistente('cocinai_restricciones', []);
-export const porcionesObjetivo = persistente('cocinai_porciones_objetivo', 2);
-export const historialBusquedas = persistente('cocinai_historial_busquedas', []);
-export const busquedasGuardadas = persistente('cocinai_busquedas_guardadas', []);
+export const despensa = persistente('llmc_despensa', []);
+export const restricciones = persistente('llmc_restricciones', []);
+export const porcionesObjetivo = persistente('llmc_porciones_objetivo', 2);
+export const historialBusquedas = persistente('llmc_historial_busquedas', []);
+export const busquedasGuardadas = persistente('llmc_busquedas_guardadas', []);
 
 export function toggleFavorito(recetaId) {
   favoritos.update((lista) => {

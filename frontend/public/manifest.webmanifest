@@ -1,6 +1,6 @@
 {
-  "name": "CocinAI - Recetas con lo que tenés",
-  "short_name": "CocinAI",
+  "name": "LLMC - Recetas con lo que tenés",
+  "short_name": "LLMC",
   "description": "Asistente de cocina que te dice qué cocinar con los ingredientes que tenés en casa.",
   "start_url": "/",
   "scope": "/",

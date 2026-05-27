@@ -8,7 +8,7 @@ from recipe_parser import parsear_receta
 from recipe_suggester import sugerir_recetas
 from models import BusquedaRequest, RecetaCreate, ParseRecetaRequest, SugerirRequest
 
-app = FastAPI(title="CocinAI", version="0.1.0")
+app = FastAPI(title="LLMC", version="0.1.0")
 
 app.add_middleware(
     CORSMiddleware,
@@ -26,7 +26,7 @@ def startup():
 
 @app.get("/")
 def root():
-    return {"app": "CocinAI", "version": "0.1.0"}
+    return {"app": "LLMC", "version": "0.1.0"}
 
 
 @app.post("/recipes/search")

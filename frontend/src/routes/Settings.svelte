@@ -117,7 +117,7 @@
 </div>
 
 <div class="card">
-  <h3>Sobre CocinAI</h3>
+  <h3>Sobre LLMC</h3>
   <p class="small muted" style="margin: 0;">
     Proyecto abierto. La búsqueda y el ranking son locales, sin tokens.
     La IA solo entra cuando realmente aporta — y la pagás vos directo al proveedor

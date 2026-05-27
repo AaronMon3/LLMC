@@ -19,7 +19,7 @@
 
 <nav class="nav-top">
   <button class="icon-btn" onclick={() => navigate('/')} title="Inicio" style="font-family: 'Caveat', cursive; font-size: 24px;">~</button>
-  <div class="title">CocinAI</div>
+  <div class="title">LLMC</div>
   <div class="spacer"></div>
   <button class="icon-btn" onclick={() => navigate('/all')} title="Todo el recetario">☰</button>
   <button class="icon-btn" onclick={() => navigate('/favorites')} title="Favoritos">★</button>

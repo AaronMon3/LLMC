@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'cocinai-v1';
+const CACHE_VERSION = 'llmc-v1';
 const ASSETS_CACHE = `${CACHE_VERSION}-assets`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 

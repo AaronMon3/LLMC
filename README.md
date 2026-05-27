@@ -1,4 +1,4 @@
-# 🍳 CocinAI
+# 🍳 LLMC
 
 Asistente de cocina que te sugiere recetas a partir de los ingredientes que tenés en casa.
 
@@ -9,7 +9,7 @@ Asistente de cocina que te sugiere recetas a partir de los ingredientes que ten�
 El problema clásico: abrís la heladera, tenés un par de cosas, no sabés qué cocinar.
 Las apps de recetas suelen tener UI saturada, suscripciones, ingredientes raros o están atadas a un proveedor de IA caro.
 
-**CocinAI** es un cuaderno de recetas digital con:
+**LLMC** es un cuaderno de recetas digital con:
 - Búsqueda local instantánea (sin tokens)
 - IA opcional para casos donde la base se queda corta — y vos ponés tu propia API key
 - Diseño tipo cuaderno casero, no parece un wrapper de ChatGPT
