@@ -1,149 +1,182 @@
-# 🍳 LLMC
+# LLMC
 
-Asistente de cocina que te sugiere recetas a partir de los ingredientes que tenés en casa.
+Asistente de cocina que sugiere recetas a partir de los ingredientes disponibles del usuario, combinando una base de recetas local con modelos de lenguaje opcionales (Anthropic, OpenAI, Groq).
 
-**Open source · Cero costos de servidor · La búsqueda no consume tokens del LLM.**
+---
 
-## ¿Por qué existe?
+## Descripción general
 
-El problema clásico: abrís la heladera, tenés un par de cosas, no sabés qué cocinar.
-Las apps de recetas suelen tener UI saturada, suscripciones, ingredientes raros o están atadas a un proveedor de IA caro.
+LLMC resuelve un problema cotidiano: tener ingredientes en casa y no saber qué cocinar. La aplicación permite buscar recetas, escalar cantidades según porciones, gestionar una despensa fija, mantener una lista de compras y solicitar sugerencias a un LLM cuando la base local resulta insuficiente.
 
-**LLMC** es un cuaderno de recetas digital con:
-- Búsqueda local instantánea (sin tokens)
-- IA opcional para casos donde la base se queda corta — y vos ponés tu propia API key
-- Diseño tipo cuaderno casero, no parece un wrapper de ChatGPT
+El proyecto fue diseñado bajo dos restricciones explícitas:
 
-## Filosofía
-
-| | |
-|---|---|
-| Base de recetas | Local (SQLite), curada |
-| Búsqueda y ranking | SQL puro + algoritmo en Python — **0 tokens** |
-| Sinónimos regionales | Diccionario local (~50 entradas) |
-| Estructurar recetas externas | LLM — 1 sola llamada, queda guardada |
-| Chat de dudas en una receta | LLM — pocos tokens por pregunta |
-| Generar variedad con IA | LLM — 1 llamada, sugiere 3 recetas |
-
-**~95% de las interacciones no tocan el LLM.**
+1. **Cero costos de operación.** El usuario provee su propia API key, que se almacena exclusivamente en el navegador. El backend no realiza llamadas a proveedores externos.
+2. **Uso eficiente del LLM.** La búsqueda, normalización y ranking son operaciones locales. El modelo de lenguaje solo se invoca para tareas donde aporta valor diferencial: estructurar texto libre, generar variedad y responder consultas contextuales.
 
 ## Funcionalidades
 
-### Core
-- 🔍 Buscar recetas por ingredientes (con sinónimos: jitomate = tomate)
-- 📋 Ver paso a paso, con tiempo estimado por paso
-- 🍽️ Selector de porciones que **escala cantidades** en vivo
-- 💡 Botón "Generar más opciones" — IA sugiere recetas distintas a las de la base
+### Búsqueda y descubrimiento
+- Búsqueda por ingredientes con normalización regional (`jitomate` → `tomate`, `patata` → `papa`, etc.)
+- Input por chips con autocompletado desde la base de ingredientes conocidos
+- Filtros por tipo de comida, tiempo máximo, dificultad y modo estricto (match completo)
+- Ranking dual: por porcentaje de match o por aprovechamiento de ingredientes del usuario
+- Catálogo navegable agrupado por tipo de comida
 
-### Personal
-- ⭐ Favoritos + historial local
-- 🧾 Despensa fija (ingredientes que siempre tenés)
-- 🚫 Restricciones (alergias, lo que no comés)
-- 💾 Búsquedas guardadas y recientes
+### Detalle y preparación
+- Vista paso a paso con tiempo, fuego y temperatura indicados por instrucción
+- Selector de porciones que escala cantidades en tiempo real
+- Chat contextual con el modelo de lenguaje (sustituciones, técnicas, dudas durante la cocción)
+- Botón para agregar ingredientes faltantes a la lista de compras, descontando los que el usuario ya tiene en su despensa
 
-### Carga de recetas
-- ➕ Pegar una receta de texto libre → la IA la estructura
-- ✂️ Editás antes de guardarla
-- 🗑️ Borrar cualquier receta de tu cuaderno
+### Gestión personal
+- Despensa fija (ingredientes asumidos como siempre disponibles)
+- Restricciones dietéticas (excluye recetas que las contengan)
+- Búsquedas recientes y guardadas con nombre
+- Favoritos e historial de recetas vistas
+- Lista de compras con acumulación automática de cantidades y persistencia local
 
-### Chat
-- 💬 Botón flotante en cada receta para preguntar dudas al chef IA
-- "¿Puedo cambiar X por Y?" / "¿Cómo sé si está listo?" / "¿Sin horno?"
+### Integración con LLM
+- Carga de recetas externas: el usuario pega texto libre y un agente lo estructura al esquema interno
+- Generación de variedad: cuando la base resulta corta, el agente sugiere recetas adicionales que pueden guardarse permanentemente
+- Validación server-side anti-recetas-triviales (mínimo de ingredientes y pasos verificados antes de devolver al cliente)
+- Soporte multi-proveedor con interfaz unificada
 
-## Multi-proveedor LLM
+## Arquitectura
 
-Vos elegís qué proveedor usar — y ponés tu propia API key (se guarda solo en tu navegador):
+```
+┌───────────────────────────────────────────────────────────────┐
+│  Cliente (Svelte 5 + Vite)                                    │
+│  ┌────────────────────────┐    ┌─────────────────────────┐    │
+│  │ UI + estado local      │    │ API keys en localStorage│    │
+│  │ Router hash propio     │    │ (nunca al backend)      │    │
+│  └────────────┬───────────┘    └───────────┬─────────────┘    │
+└───────────────┼─────────────────────────────┼─────────────────┘
+                │                             │
+                │ /api/*                      │ HTTPS directo
+                ▼                             ▼
+┌─────────────────────────────┐   ┌────────────────────────────┐
+│  Backend (FastAPI + SQLite) │   │  Proveedores LLM           │
+│  • Búsqueda y ranking       │   │  • Anthropic (Claude)      │
+│  • Normalización            │   │  • OpenAI                  │
+│  • Agentes LLM como proxy   │◄──┤  • Groq                    │
+└─────────────────────────────┘   └────────────────────────────┘
+```
 
-- **Groq** (gratis, sin tarjeta) — recomendado para empezar
-- **Claude** (Anthropic)
-- **OpenAI** (gpt-4o-mini)
+El cliente realiza dos tipos de llamadas:
 
-## Stack
+- **Al backend propio**, para operaciones sobre la base de datos local (búsqueda, listado, creación, eliminación). Estas no consumen tokens.
+- **Directamente al proveedor LLM**, para el chat contextual de cada receta. Esto evita que el servidor maneje credenciales del usuario.
 
-- **Backend**: Python 3.10+ · FastAPI · SQLite
-- **Frontend**: Svelte 5 (runes mode) · Vite · Router hash propio
-- **PWA**: instalable en móvil, funciona offline para recetas vistas
+Las operaciones que requieren prompt complejo y validación (parser y suggester) sí pasan por el backend, que actúa como proxy autenticado con la key del usuario en el cuerpo del request.
 
-## Cómo correrlo
+## Stack tecnológico
+
+| Capa | Tecnología | Justificación |
+|---|---|---|
+| Backend | Python 3.10+, FastAPI | Tipado opcional vía Pydantic, validación automática, ergonomía similar a Express |
+| Base de datos | SQLite | Cero infraestructura, suficiente para el dominio, archivo único en deploy |
+| LLM SDK | `anthropic`, `openai` | El SDK de OpenAI cubre también Groq vía `base_url` configurable |
+| Frontend | Svelte 5 (runes mode), Vite | Bundle ~33 KB gzip, sin virtual DOM, compilación a JS nativo |
+| Routing | Hash router propio (~30 líneas) | Las librerías existentes presentaban incompatibilidades parciales con Svelte 5; rolled-own evita dependencia adicional |
+| PWA | Service Worker + Web App Manifest | Instalación en móvil sin App Store, cacheo de assets estáticos |
+| Estado | Stores nativos de Svelte + localStorage | Persistencia client-side sin necesidad de sesión |
+
+## Decisiones de diseño
+
+**Base curada local en lugar de generación on-demand.** Generar cada receta con LLM tiene tres problemas: costo, latencia y reproducibilidad. La base local resuelve el ~95% de las consultas en milisegundos sin consumo de tokens. El LLM interviene solo cuando agrega valor real.
+
+**API key gestionada por el cliente.** Evita la dependencia de un único proveedor y elimina el costo de infraestructura LLM para el operador del proyecto. El trade-off es mayor fricción inicial para el usuario, mitigado ofreciendo Groq (tier gratuito) como opción por defecto.
+
+**Multi-proveedor con interfaz uniforme.** Los tres proveedores soportados utilizan el SDK de OpenAI (vía `base_url` para Groq) o el SDK propio de Anthropic. La capa de abstracción es mínima y se concentra en el formato de mensajes.
+
+**Ranking dual configurable.** Dos métricas opuestas (porcentaje de match vs. porcentaje de aprovechamiento) cubren intenciones distintas del usuario: "qué puedo cocinar rápido" vs. "qué ingredientes voy a desperdiciar si no uso pronto".
+
+**Prompts con validación estructural.** Tanto el parser como el sugeridor incluyen reglas explícitas sobre fuego, temperatura, tiempos por paso y cantidad mínima de ingredientes. El backend valida la respuesta antes de devolverla al cliente, descartando salidas degeneradas.
+
+**Service worker registrado solo en producción.** Evita interferir con el hot module reload durante desarrollo, mientras provee experiencia offline en deploy.
+
+## Instalación
+
+Requisitos: Python 3.10+, Node.js 18+.
 
 ```bash
 # Backend
 cd backend
+python -m venv .venv && source .venv/bin/activate  # o .venv\Scripts\activate en Windows
 pip install -r requirements.txt
-python ../scripts/seed_recipes.py    # primera vez
+python ../scripts/seed_recipes.py
 uvicorn main:app --reload
+```
 
-# Frontend (otra terminal)
+```bash
+# Frontend (en otra terminal)
 cd frontend
 npm install
 npm run dev
 ```
 
-Frontend en `http://localhost:5173`, backend en `http://localhost:8000`.
+El frontend queda disponible en `http://localhost:5173` y proxea `/api/*` al backend en `http://localhost:8000`.
 
-Para probar PWA y service worker:
+Para probar la versión PWA con service worker activo:
+
 ```bash
-cd frontend && npm run build && npm run preview
+cd frontend
+npm run build
+npm run preview
 ```
 
 ## Estructura del proyecto
 
 ```
-cocina-app/
+.
 ├── backend/
-│   ├── main.py              FastAPI endpoints
-│   ├── db.py                SQLite (schema + CRUD)
-│   ├── models.py            Pydantic
-│   ├── search.py            Algoritmo de búsqueda + ranking
-│   ├── normalizer.py        Sinónimos de ingredientes
-│   ├── recipe_parser.py     Agente: parsear receta libre
-│   ├── recipe_suggester.py  Agente: sugerir recetas nuevas
+│   ├── main.py                 Endpoints FastAPI
+│   ├── db.py                   Conexión SQLite y operaciones CRUD
+│   ├── models.py               Schemas Pydantic
+│   ├── search.py               Algoritmo de búsqueda y ranking
+│   ├── normalizer.py           Normalización con diccionario de sinónimos
+│   ├── recipe_parser.py        Agente: estructurar texto libre a receta
+│   ├── recipe_suggester.py     Agente: generar recetas adicionales
+│   ├── requirements.txt
 │   └── data/
 │       ├── recetas.db
 │       └── sinonimos.json
 ├── frontend/
-│   └── src/
-│       ├── App.svelte
-│       ├── router.js        Router hash propio
-│       ├── stores.js        Estado persistente (localStorage)
-│       ├── components/
-│       │   └── ChipsInput.svelte
-│       ├── lib/
-│       │   ├── api.js
-│       │   ├── llm.js       Llamadas directas a Claude/OpenAI/Groq
-│       │   └── format.js
-│       └── routes/
-│           ├── Home.svelte
-│           ├── Results.svelte
-│           ├── Recipe.svelte
-│           ├── Upload.svelte
-│           ├── Settings.svelte
-│           ├── Favorites.svelte
-│           └── All.svelte
+│   ├── src/
+│   │   ├── App.svelte
+│   │   ├── router.js
+│   │   ├── stores.js           Estado persistente
+│   │   ├── components/
+│   │   │   └── ChipsInput.svelte
+│   │   ├── lib/
+│   │   │   ├── api.js          Cliente del backend
+│   │   │   ├── llm.js          Cliente directo a proveedores LLM
+│   │   │   └── format.js       Formato y escalado de cantidades
+│   │   └── routes/
+│   ├── public/
+│   │   ├── manifest.webmanifest
+│   │   ├── sw.js
+│   │   └── icon-*.png
+│   └── vite.config.js
 └── scripts/
-    └── seed_recipes.py
+    └── seed_recipes.py         Población inicial de la base
 ```
 
-## Estado actual
+## Estado del proyecto
 
-- **62 recetas** en la base (almuerzos, cenas, postres, desayunos, guarniciones)
-- **42 ingredientes** únicos con **~50 sinónimos**
-- Bundle frontend: ~33 KB gzip
-- Backend: 5 dependencias Python
-- Costo mensual para el dueño: **$0**
+- 62 recetas iniciales con cantidades, unidades y tiempos por paso
+- 42 ingredientes canónicos con ~50 sinónimos regionales
+- Bundle frontend: 33 KB gzipped
+- 5 dependencias Python, 3 dependencias npm
 
-## Cómo contribuir
+## Próximos pasos
 
-Ideas para sumar (PRs bienvenidos):
-- Más recetas (editar `scripts/seed_recipes.py`)
-- Más sinónimos (editar `backend/data/sinonimos.json`)
-- Lista de compras automática
-- Modo "usá todo lo que tengo" (ranking alternativo)
-- Foto de ingredientes (visión)
-- Compartir recetas por link
-- Multi-idioma
-- Importar receta desde URL
+- Compartir recetas mediante link generado
+- Export e import de datos del usuario (recetas cargadas, favoritos, lista de compras)
+- Visión por computadora para detección de ingredientes a partir de imagen
+- Importación de recetas desde URL externa
+- Internacionalización
 
 ## Licencia
 
-MIT. Hacé lo que quieras con el código.
+MIT
