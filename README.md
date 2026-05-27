@@ -95,7 +95,42 @@ Las operaciones que requieren prompt complejo y validación (parser y suggester)
 
 **Service worker registrado solo en producción.** Evita interferir con el hot module reload durante desarrollo, mientras provee experiencia offline en deploy.
 
-## Instalación
+## Deployment
+
+Las dos partes del sistema se hostean por separado y son **gratuitas** con sus tiers free.
+
+### Frontend en Vercel
+
+```bash
+# Conectar repo de GitHub desde dashboard.vercel.com
+# Settings → Root Directory: frontend
+# Build Command: npm run build
+# Output Directory: dist
+```
+
+Vercel detecta Vite automáticamente. Cada push a `main` redeploya. El frontend queda en una URL pública con HTTPS, lo que habilita la instalación como PWA en móvil.
+
+### Backend en Render
+
+```bash
+# Crear servicio web en render.com
+# Build Command: pip install -r backend/requirements.txt && python scripts/seed_recipes.py
+# Start Command: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+```
+
+Render free duerme tras 15 minutos sin tráfico (cold start ~30s al despertar). El disco no es persistente: las recetas cargadas por usuarios se reinician en cada deploy, por eso la versión web es apta como demo o para producción con plan pago.
+
+### Variable de entorno en Vercel
+
+Configurar `VITE_API_URL` apuntando a la URL del servicio de Render para que el frontend desplegado sepa dónde queda el backend.
+
+### Acceso del usuario final
+
+Una vez deployado, cualquiera puede usar la aplicación desde el navegador o instalarla como PWA en su móvil. La API key del proveedor LLM la carga cada usuario en su navegador (Settings) y nunca se transmite al backend del proyecto.
+
+---
+
+## Instalación local
 
 Requisitos: Python 3.10+, Node.js 18+.
 
@@ -171,6 +206,7 @@ npm run preview
 
 ## Próximos pasos
 
+- **Versión Android nativa**: empaquetar el frontend con Capacitor para distribución como APK, portando la lógica del backend a JavaScript y la base SQLite al almacenamiento local del dispositivo. Elimina la dependencia de un servidor para escalar.
 - Compartir recetas mediante link generado
 - Export e import de datos del usuario (recetas cargadas, favoritos, lista de compras)
 - Visión por computadora para detección de ingredientes a partir de imagen
