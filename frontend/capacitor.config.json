@@ -1,0 +1,14 @@
+{
+  "appId": "com.aaronmon3.llmc",
+  "appName": "LLMC",
+  "webDir": "dist",
+  "android": {
+    "buildOptions": {
+      "keystorePath": null,
+      "releaseType": "APK"
+    }
+  },
+  "server": {
+    "androidScheme": "https"
+  }
+}

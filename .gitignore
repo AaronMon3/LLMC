@@ -36,3 +36,14 @@ Thumbs.db
 .claude/
 CLAUDE.md
 PROJECT.md
+
+# Android / Capacitor build artifacts
+frontend/android/app/build/
+frontend/android/.gradle/
+frontend/android/build/
+frontend/android/local.properties
+frontend/android/captures/
+frontend/android/.idea/
+frontend/android/*.iml
+*.apk
+*.aab

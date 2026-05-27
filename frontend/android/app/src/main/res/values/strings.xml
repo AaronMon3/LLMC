@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">LLMC</string>
+    <string name="title_activity_main">LLMC</string>
+    <string name="package_name">com.aaronmon3.llmc</string>
+    <string name="custom_url_scheme">com.aaronmon3.llmc</string>
+</resources>

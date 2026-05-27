@@ -204,9 +204,33 @@ npm run preview
 - Bundle frontend: 33 KB gzipped
 - 5 dependencias Python, 3 dependencias npm
 
+## Versión Android (APK)
+
+La aplicación se empaqueta como APK Android usando Capacitor. Toda la lógica vive en el dispositivo (búsqueda local, IndexedDB, llamadas LLM directas), sin dependencia de servidor.
+
+### Compilación local
+
+Requiere Android SDK + Java 21.
+
+```bash
+cd frontend
+npm run build
+npx cap sync android
+cd android
+./gradlew assembleDebug
+# APK queda en android/app/build/outputs/apk/debug/app-debug.apk
+```
+
+### Compilación automatizada en CI
+
+El repositorio incluye un workflow de GitHub Actions (`.github/workflows/build-android.yml`) que compila la APK en cada push a `main`. El artefacto queda disponible para descarga desde la pestaña Actions del repositorio durante 30 días, sin requerir instalación local de Android SDK.
+
+### Instalación en dispositivo
+
+Habilitar "fuentes desconocidas" en el Android, transferir el APK y abrirlo. No requiere Play Store para distribución directa.
+
 ## Próximos pasos
 
-- **Versión Android nativa**: empaquetar el frontend con Capacitor para distribución como APK, portando la lógica del backend a JavaScript y la base SQLite al almacenamiento local del dispositivo. Elimina la dependencia de un servidor para escalar.
 - Compartir recetas mediante link generado
 - Export e import de datos del usuario (recetas cargadas, favoritos, lista de compras)
 - Visión por computadora para detección de ingredientes a partir de imagen
