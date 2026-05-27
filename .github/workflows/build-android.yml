@@ -5,6 +5,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -54,10 +57,31 @@ jobs:
         working-directory: frontend/android
         run: ./gradlew assembleDebug --no-daemon --stacktrace
 
-      - name: Upload APK
+      - name: Upload APK as artifact
         uses: actions/upload-artifact@v4
         with:
           name: LLMC-debug-apk
           path: frontend/android/app/build/outputs/apk/debug/app-debug.apk
           retention-days: 30
           if-no-files-found: error
+
+      - name: Rename APK
+        run: cp frontend/android/app/build/outputs/apk/debug/app-debug.apk LLMC.apk
+
+      - name: Publish to Latest Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: LLMC — última versión
+          body: |
+            APK Android compilada automáticamente desde el último commit en `main`.
+
+            **Cómo instalarla:**
+            1. Descargá `LLMC.apk` debajo
+            2. En el celular, habilitá "Fuentes desconocidas" en Configuración de seguridad
+            3. Abrí el archivo descargado
+
+            Build basada en el commit `${{ github.sha }}` del ${{ github.event.head_commit.timestamp }}.
+          files: LLMC.apk
+          make_latest: true
+          prerelease: false
