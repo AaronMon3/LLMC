@@ -37,6 +37,8 @@
     return texto.split(/[,\n;]| y | con /i).map((s) => s.trim()).filter(Boolean);
   }
 
+  let modoAprovechar = $derived(query.aprovechar === '1');
+
   function obtenerFiltros() {
     const filtros = {};
     if (query.tiempo_max) filtros.tiempo_max = Number(query.tiempo_max);
@@ -45,6 +47,9 @@
     if (query.estricto === '1') {
       filtros.incluir_faltantes = false;
       filtros.min_match = 1;
+    }
+    if (query.aprovechar === '1') {
+      filtros.modo_aprovechar = true;
     }
     if (query.excluir) {
       filtros.excluir = query.excluir.split(',').map((s) => s.trim()).filter(Boolean);
@@ -94,7 +99,7 @@
         ...resultados.map((r) => r.receta.nombre),
         ...sugerencias.map((s) => s.nombre),
       ];
-      const data = await api.sugerirRecetas(ingredientes, excluir, config.provider, claveActual);
+      const data = await api.sugerirRecetas(ingredientes, excluir, config.provider, claveActual, modoAprovechar);
 
       const nuevasNoRepetidas = data.recetas.filter(
         (nueva) => !sugerencias.some((existente) =>
@@ -150,13 +155,18 @@
 
 {#if !cargando && !error}
   <div class="card" style="border: 1px dashed var(--primary); background: var(--paper-2); padding: 14px 18px;">
+    {#if modoAprovechar}
+      <div class="small" style="margin-bottom: 8px; padding: 6px 10px; background: var(--olive-soft); color: var(--olive); border-radius: 2px;">
+        🌱 Modo aprovechar activo · ordenado por uso de tus ingredientes
+      </div>
+    {/if}
     <div class="row" style="gap: 10px; align-items: center;">
       <div style="flex: 1;">
         <div style="font-family: 'Caveat', cursive; font-size: 22px; color: var(--primary); line-height: 1;">
           ¿Querés más opciones?
         </div>
         <div class="small muted" style="margin-top: 2px;">
-          {proveedorActivo} te sugiere 3 recetas nuevas.
+          {proveedorActivo} te sugiere 3 recetas{modoAprovechar ? ' que usen muchos de tus ingredientes' : ' nuevas'}.
         </div>
       </div>
       <button class="btn btn-primary" style="width: auto; padding: 10px 18px; font-size: 12px;"
@@ -240,7 +250,13 @@
           <h3 class="nombre" style="margin: 0; flex: 1;">{r.receta.nombre}</h3>
           {#if r.receta.origen === 'ia'}<span class="tag tag-blue">IA</span>{/if}
           {#if r.receta.origen === 'usuario'}<span class="tag tag-blue">cargada</span>{/if}
-          <span class="tag tag-green">{Math.round(r.porcentaje_match * 100)}%</span>
+          {#if modoAprovechar}
+            <span class="tag tag-green" title="ingredientes tuyos que usa">
+              usa {r.ingredientes_aprovechados.length}/{r.total_ingredientes_usuario}
+            </span>
+          {:else}
+            <span class="tag tag-green">{Math.round(r.porcentaje_match * 100)}%</span>
+          {/if}
         </div>
         <div class="row" style="gap: 8px; margin-bottom: 10px; flex-wrap: wrap;">
           <span class="tag">{r.receta.tiempo_minutos} min</span>

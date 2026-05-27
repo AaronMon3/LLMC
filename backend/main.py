@@ -39,6 +39,7 @@ def search(req: BusquedaRequest):
         incluir_faltantes=req.incluir_faltantes,
         excluir=req.excluir,
         min_match=req.min_match,
+        modo_aprovechar=req.modo_aprovechar,
     )
     return {"resultados": resultados, "total": len(resultados)}
 
@@ -143,7 +144,7 @@ def parse_recipe(req: ParseRecetaRequest):
 @app.post("/recipes/suggest")
 def suggest_recipes(req: SugerirRequest):
     try:
-        recetas = sugerir_recetas(req.ingredientes, req.excluir, req.api_key, req.provider)
+        recetas = sugerir_recetas(req.ingredientes, req.excluir, req.api_key, req.provider, req.modo_aprovechar)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:

@@ -60,6 +60,7 @@ class BusquedaRequest(BaseModel):
     incluir_faltantes: bool = True
     excluir: list[str] = []
     min_match: float = 0.5
+    modo_aprovechar: bool = False
 
 
 class ParseRecetaRequest(BaseModel):
@@ -73,3 +74,4 @@ class SugerirRequest(BaseModel):
     excluir: list[str] = []
     api_key: str
     provider: Literal["claude", "openai", "groq"] = "claude"
+    modo_aprovechar: bool = False

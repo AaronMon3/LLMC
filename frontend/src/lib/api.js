@@ -54,10 +54,10 @@ export const api = {
     });
   },
 
-  sugerirRecetas(ingredientes, excluir, provider, apiKey) {
+  sugerirRecetas(ingredientes, excluir, provider, apiKey, modoAprovechar = false) {
     return request('/recipes/suggest', {
       method: 'POST',
-      body: JSON.stringify({ ingredientes, excluir, provider, api_key: apiKey }),
+      body: JSON.stringify({ ingredientes, excluir, provider, api_key: apiKey, modo_aprovechar: modoAprovechar }),
     });
   },
 };

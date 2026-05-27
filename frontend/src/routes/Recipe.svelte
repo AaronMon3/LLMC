@@ -2,7 +2,7 @@
   import { navigate, volver } from '../router.js';
   import { api } from '../lib/api.js';
   import { preguntarAlChef } from '../lib/llm.js';
-  import { llmConfig, getKeyActiva, favoritos, toggleFavorito, agregarAlHistorial, PROVIDERS, porcionesObjetivo, historial } from '../stores.js';
+  import { llmConfig, getKeyActiva, favoritos, toggleFavorito, agregarAlHistorial, PROVIDERS, porcionesObjetivo, historial, despensa, agregarALista } from '../stores.js';
   import { get } from 'svelte/store';
   import { formatearIngrediente, formatearTiempoPaso, extraerSenales } from '../lib/format.js';
 
@@ -18,6 +18,32 @@
   let pregunta = $state('');
   let conversacion = $state([]);
   let preguntando = $state(false);
+
+  let agregadoCompras = $state(false);
+  let despensaActual = $state([]);
+  $effect(() => {
+    const u = despensa.subscribe((v) => despensaActual = v);
+    return u;
+  });
+
+  function agregarFaltantesACompras() {
+    if (!receta) return;
+    const tengo = new Set(despensaActual.map((s) => s.toLowerCase()));
+    const items = receta.ingredientes_esenciales
+      .filter((ing) => !tengo.has(ing.nombre.toLowerCase()))
+      .map((ing) => ({
+        nombre: ing.nombre,
+        cantidad: (ing.cantidad * porcionesElegidas) / receta.porciones,
+        unidad: ing.unidad,
+      }));
+    if (items.length === 0) {
+      alert('Ya tenés todos los ingredientes en tu despensa.');
+      return;
+    }
+    agregarALista(items);
+    agregadoCompras = true;
+    setTimeout(() => agregadoCompras = false, 2000);
+  }
 
   let esFavorito = $state(false);
   let config = $state({ provider: 'groq', keys: {} });
@@ -161,6 +187,10 @@
         </li>
       {/each}
     </ul>
+
+    <button class="btn btn-ghost" style="margin-top: 14px;" onclick={agregarFaltantesACompras}>
+      {agregadoCompras ? '✓ Agregado a la lista' : '+ a lista de compras'}
+    </button>
   </div>
 
   <div class="card">

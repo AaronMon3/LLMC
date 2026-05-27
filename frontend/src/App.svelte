@@ -7,6 +7,7 @@
   import Settings from './routes/Settings.svelte';
   import Favorites from './routes/Favorites.svelte';
   import All from './routes/All.svelte';
+  import Compras from './routes/Compras.svelte';
 
   let current = $state({ path: '/', query: {} });
   $effect(() => {
@@ -23,6 +24,7 @@
   <div class="spacer"></div>
   <button class="icon-btn" onclick={() => navigate('/all')} title="Todo el recetario">☰</button>
   <button class="icon-btn" onclick={() => navigate('/favorites')} title="Favoritos">★</button>
+  <button class="icon-btn" onclick={() => navigate('/compras')} title="Lista de compras">🛒</button>
   <button class="icon-btn" onclick={() => navigate('/upload')} title="Agregar receta">+</button>
   <button class="icon-btn" onclick={() => navigate('/settings')} title="Ajustes">⚙</button>
 </nav>
@@ -42,6 +44,8 @@
     <Favorites />
   {:else if current.path === '/all'}
     <All />
+  {:else if current.path === '/compras'}
+    <Compras />
   {:else}
     <div class="card">
       <h3>Esta página no existe</h3>

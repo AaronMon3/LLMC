@@ -75,10 +75,21 @@ FORMATO DE SALIDA (devuelve SOLO el JSON, sin markdown, sin texto adicional):
 Sin tildes ni caracteres especiales en los textos."""
 
 
-def _build_user_prompt(ingredientes: list[str], excluir: list[str]) -> str:
+def _build_user_prompt(ingredientes: list[str], excluir: list[str], modo_aprovechar: bool = False) -> str:
     excluir_txt = ""
     if excluir:
         excluir_txt = f"\n\nNO repitas estas recetas que ya existen: {', '.join(excluir)}."
+
+    if modo_aprovechar:
+        modo_txt = f"""
+
+MODO APROVECHAR (IMPORTANTE):
+El usuario quiere usar la MAXIMA CANTIDAD POSIBLE de sus ingredientes para no desperdiciar nada.
+Cada una de las 3 recetas DEBE incluir al menos {max(3, len(ingredientes)//2)} de los ingredientes del usuario como esenciales.
+Priorizar combinaciones que aprovechen muchos ingredientes a la vez (guisos, tartas, salteados, rellenos, sopas).
+Es preferible una receta que use 5 ingredientes del usuario aunque sea mas elaborada, que 3 recetas que usen 2 ingredientes cada una."""
+    else:
+        modo_txt = ""
 
     return f"""El usuario tiene estos ingredientes en casa: {', '.join(ingredientes)}.
 
@@ -88,24 +99,24 @@ Asumi que el usuario tiene en su despensa basica: harina, huevo, azucar, sal, pi
 Podes incorporar esos basicos en las recetas si la lista del usuario es chica.
 
 NO sugieras combinaciones triviales (mezclar dos cosas sin coccion no es una receta).
-Cada receta debe tener minimo 4 ingredientes y minimo 4 pasos de preparacion.
+Cada receta debe tener minimo 4 ingredientes y minimo 4 pasos de preparacion.{modo_txt}
 
 Las cantidades deben ser para 2 porciones.{excluir_txt}"""
 
 
-def _llamar_claude(ingredientes: list[str], excluir: list[str], api_key: str) -> str:
+def _llamar_claude(ingredientes, excluir, api_key, modo_aprovechar=False):
     from anthropic import Anthropic
     client = Anthropic(api_key=api_key)
     response = client.messages.create(
         model="claude-haiku-4-5-20251001",
         max_tokens=3000,
         system=SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": _build_user_prompt(ingredientes, excluir)}],
+        messages=[{"role": "user", "content": _build_user_prompt(ingredientes, excluir, modo_aprovechar)}],
     )
     return response.content[0].text.strip()
 
 
-def _llamar_openai(ingredientes: list[str], excluir: list[str], api_key: str) -> str:
+def _llamar_openai(ingredientes, excluir, api_key, modo_aprovechar=False):
     from openai import OpenAI
     client = OpenAI(api_key=api_key)
     response = client.chat.completions.create(
@@ -113,13 +124,13 @@ def _llamar_openai(ingredientes: list[str], excluir: list[str], api_key: str) ->
         max_tokens=3000,
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": _build_user_prompt(ingredientes, excluir)},
+            {"role": "user", "content": _build_user_prompt(ingredientes, excluir, modo_aprovechar)},
         ],
     )
     return response.choices[0].message.content.strip()
 
 
-def _llamar_groq(ingredientes: list[str], excluir: list[str], api_key: str) -> str:
+def _llamar_groq(ingredientes, excluir, api_key, modo_aprovechar=False):
     from openai import OpenAI
     client = OpenAI(api_key=api_key, base_url="https://api.groq.com/openai/v1")
     response = client.chat.completions.create(
@@ -127,7 +138,7 @@ def _llamar_groq(ingredientes: list[str], excluir: list[str], api_key: str) -> s
         max_tokens=3000,
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": _build_user_prompt(ingredientes, excluir)},
+            {"role": "user", "content": _build_user_prompt(ingredientes, excluir, modo_aprovechar)},
         ],
     )
     return response.choices[0].message.content.strip()
@@ -175,13 +186,14 @@ def sugerir_recetas(
     excluir: list[str],
     api_key: str,
     provider: str = "claude",
+    modo_aprovechar: bool = False,
 ) -> list[dict]:
     if provider == "openai":
-        raw = _llamar_openai(ingredientes, excluir, api_key)
+        raw = _llamar_openai(ingredientes, excluir, api_key, modo_aprovechar)
     elif provider == "groq":
-        raw = _llamar_groq(ingredientes, excluir, api_key)
+        raw = _llamar_groq(ingredientes, excluir, api_key, modo_aprovechar)
     else:
-        raw = _llamar_claude(ingredientes, excluir, api_key)
+        raw = _llamar_claude(ingredientes, excluir, api_key, modo_aprovechar)
 
     contenido = _limpiar_json(raw)
     try:

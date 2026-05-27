@@ -14,6 +14,7 @@
   let dificultad = $state('');
   let tipoComida = $state('');
   let modoEstricto = $state(false);
+  let modoAprovechar = $state(false);
   let porciones = $state(2);
 
   let ingredientesConocidos = $state([]);
@@ -69,6 +70,7 @@
     if (dificultad) params.set('dificultad', dificultad);
     if (tipoComida) params.set('tipo', tipoComida);
     if (modoEstricto) params.set('estricto', '1');
+    if (modoAprovechar) params.set('aprovechar', '1');
     params.set('porciones', String(porciones));
 
     navigate(`/results?${params.toString()}`);
@@ -214,6 +216,14 @@
         <div style="flex: 1;">
           <div class="small" style="font-style: normal; color: var(--ink);">Modo estricto</div>
           <div class="small muted">Solo recetas con TODOS los ingredientes que tenés</div>
+        </div>
+      </label>
+
+      <label class="row" style="cursor: pointer; padding: 8px 0; gap: 10px;">
+        <input type="checkbox" bind:checked={modoAprovechar} style="margin: 0;" />
+        <div style="flex: 1;">
+          <div class="small" style="font-style: normal; color: var(--ink);">Modo aprovechar</div>
+          <div class="small muted">Prioriza recetas que usen la MAYOR cantidad de tus ingredientes (menos desperdicio)</div>
         </div>
       </label>
     </div>

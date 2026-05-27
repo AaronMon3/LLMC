@@ -38,6 +38,32 @@ export const restricciones = persistente('llmc_restricciones', []);
 export const porcionesObjetivo = persistente('llmc_porciones_objetivo', 2);
 export const historialBusquedas = persistente('llmc_historial_busquedas', []);
 export const busquedasGuardadas = persistente('llmc_busquedas_guardadas', []);
+export const listaCompras = persistente('llmc_lista_compras', []);
+
+export function agregarALista(items) {
+  listaCompras.update((lista) => {
+    const map = new Map();
+    for (const it of lista) {
+      const key = `${it.nombre}__${it.unidad}`;
+      map.set(key, { ...it });
+    }
+    for (const it of items) {
+      const key = `${it.nombre}__${it.unidad}`;
+      if (map.has(key)) {
+        const ex = map.get(key);
+        ex.cantidad = (ex.cantidad || 0) + (it.cantidad || 0);
+      } else {
+        map.set(key, {
+          nombre: it.nombre,
+          cantidad: it.cantidad || 0,
+          unidad: it.unidad || 'al gusto',
+          marcado: false,
+        });
+      }
+    }
+    return Array.from(map.values());
+  });
+}
 
 export function toggleFavorito(recetaId) {
   favoritos.update((lista) => {

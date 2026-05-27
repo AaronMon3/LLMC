@@ -16,6 +16,7 @@ def buscar_recetas(
     limite: int = 20,
     excluir: list[str] | None = None,
     min_match: float = 0.5,
+    modo_aprovechar: bool = False,
 ) -> list[dict]:
     ingredientes_norm = set(normalizar_lista(ingredientes_usuario))
     if not ingredientes_norm:
@@ -89,12 +90,20 @@ def buscar_recetas(
     resultados = []
     for receta in agrupado.values():
         esenciales = set(receta["esenciales"])
+        opcionales = set(receta["opcionales"])
         if not esenciales:
             continue
 
         match = esenciales & ingredientes_efectivos
         faltantes = esenciales - ingredientes_efectivos
         porcentaje = len(match) / len(esenciales)
+
+        usuario_usados_esenciales = ingredientes_norm & esenciales
+        usuario_usados_opcionales = ingredientes_norm & opcionales
+        usuario_usados = usuario_usados_esenciales | usuario_usados_opcionales
+        porcentaje_aprovechamiento = (
+            len(usuario_usados) / len(ingredientes_norm) if ingredientes_norm else 0
+        )
 
         if not incluir_faltantes and faltantes:
             continue
@@ -121,13 +130,26 @@ def buscar_recetas(
             "ingredientes_match": sorted(match - INGREDIENTES_BASE),
             "ingredientes_faltantes": sorted(faltantes - INGREDIENTES_BASE),
             "porcentaje_match": round(porcentaje, 2),
+            "porcentaje_aprovechamiento": round(porcentaje_aprovechamiento, 2),
+            "ingredientes_aprovechados": sorted(usuario_usados - INGREDIENTES_BASE),
+            "total_ingredientes_usuario": len(ingredientes_norm),
         })
 
-    resultados.sort(
-        key=lambda r: (
-            -r["porcentaje_match"],
-            len(r["ingredientes_faltantes"]),
-            r["receta"]["tiempo_minutos"],
+    if modo_aprovechar:
+        resultados.sort(
+            key=lambda r: (
+                -r["porcentaje_aprovechamiento"],
+                -r["porcentaje_match"],
+                len(r["ingredientes_faltantes"]),
+                r["receta"]["tiempo_minutos"],
+            )
         )
-    )
+    else:
+        resultados.sort(
+            key=lambda r: (
+                -r["porcentaje_match"],
+                len(r["ingredientes_faltantes"]),
+                r["receta"]["tiempo_minutos"],
+            )
+        )
     return resultados[:limite]
