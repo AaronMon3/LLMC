@@ -1,0 +1,4020 @@
+[
+  {
+    "id": 42,
+    "nombre": "Albondigas con salsa",
+    "dificultad": "facil",
+    "tiempo_minutos": 50,
+    "porciones": 4,
+    "tipo": "almuerzo",
+    "pasos": [
+      {
+        "texto": "Mezclar la carne con huevo, pan rallado, ajo picado y sal.",
+        "tiempo_minutos": 4
+      },
+      {
+        "texto": "Formar bolitas del tamano de una nuez.",
+        "tiempo_minutos": 6
+      },
+      {
+        "texto": "Sofreir cebolla picada en una olla a fuego medio.",
+        "tiempo_minutos": 4
+      },
+      {
+        "texto": "Sumar la salsa de tomate y llevar a hervor a fuego medio.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Bajar a fuego bajo, agregar las albondigas y cocinar tapado.",
+        "tiempo_minutos": 25
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "cebolla",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "ajo",
+        "cantidad": 2.0,
+        "unidad": "dientes"
+      },
+      {
+        "nombre": "huevo",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "salsa de tomate",
+        "cantidad": 500.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "pan rallado",
+        "cantidad": 80.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "carne picada",
+        "cantidad": 600.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "perejil",
+        "cantidad": 0.0,
+        "unidad": "al gusto"
+      },
+      {
+        "nombre": "queso rallado",
+        "cantidad": 50.0,
+        "unidad": "g"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "nombre": "Alfajores de maicena",
+    "dificultad": "media",
+    "tiempo_minutos": 60,
+    "porciones": 12,
+    "tipo": "postres",
+    "pasos": [
+      {
+        "texto": "Batir la manteca con el azucar hasta blanquear.",
+        "tiempo_minutos": 4
+      },
+      {
+        "texto": "Sumar las yemas una a una integrando bien.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Agregar maicena, harina, ralladura y vainilla. Mezclar hasta formar una masa.",
+        "tiempo_minutos": 4
+      },
+      {
+        "texto": "Estirar la masa de 1 cm de espesor y cortar discos.",
+        "tiempo_minutos": 8
+      },
+      {
+        "texto": "Hornear a 180 grados hasta que esten apenas firmes pero blancos.",
+        "tiempo_minutos": 12
+      },
+      {
+        "texto": "Cuando enfrien, unirlos de a dos con dulce de leche y pasar el borde por coco.",
+        "tiempo_minutos": 15
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "huevo",
+        "cantidad": 3.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "manteca",
+        "cantidad": 200.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "azucar",
+        "cantidad": 100.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "harina",
+        "cantidad": 150.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "dulce de leche",
+        "cantidad": 400.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "maicena",
+        "cantidad": 200.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "coco rallado",
+        "cantidad": 100.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "limon",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "vainilla",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "nombre": "Arroz blanco",
+    "dificultad": "facil",
+    "tiempo_minutos": 20,
+    "porciones": 3,
+    "tipo": "guarnicion",
+    "pasos": [
+      {
+        "texto": "Lavar el arroz bajo agua fria hasta que salga clara.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "En una olla, calentar el aceite a fuego medio.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Tostar el arroz a fuego medio 1 minuto.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Agregar el agua caliente con sal.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Cuando rompa el hervor, bajar a fuego minimo y tapar.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Cocinar a fuego bajo hasta que el agua se absorba.",
+        "tiempo_minutos": 15
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "arroz",
+        "cantidad": 300.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "agua",
+        "cantidad": 600.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "aceite",
+        "cantidad": 1.0,
+        "unidad": "cda"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "ajo",
+        "cantidad": 1.0,
+        "unidad": "diente"
+      },
+      {
+        "nombre": "manteca",
+        "cantidad": 15.0,
+        "unidad": "g"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "nombre": "Arroz chaufa",
+    "dificultad": "facil",
+    "tiempo_minutos": 30,
+    "porciones": 3,
+    "tipo": "almuerzo",
+    "pasos": [
+      {
+        "texto": "Cocinar el arroz en agua con sal a fuego medio hasta tierno.",
+        "tiempo_minutos": 14
+      },
+      {
+        "texto": "Cortar el pollo en cubitos chicos y saltearlo en aceite a fuego alto hasta dorar.",
+        "tiempo_minutos": 6
+      },
+      {
+        "texto": "Batir los huevos y hacer un revuelto en la misma sarten a fuego medio.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Sumar la cebolla de verdeo picada y saltear a fuego alto 1 minuto.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Incorporar el arroz cocido y la salsa de soja, mezclar bien.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Saltear todo junto a fuego alto hasta que este caliente.",
+        "tiempo_minutos": 3
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "pollo",
+        "cantidad": 250.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "arroz",
+        "cantidad": 300.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "aceite",
+        "cantidad": 3.0,
+        "unidad": "cdas"
+      },
+      {
+        "nombre": "huevo",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "cebolla de verdeo",
+        "cantidad": 3.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "salsa de soja",
+        "cantidad": 4.0,
+        "unidad": "cdas"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "morron",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "zanahoria",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "jamon",
+        "cantidad": 100.0,
+        "unidad": "g"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "nombre": "Arroz con leche",
+    "dificultad": "facil",
+    "tiempo_minutos": 35,
+    "porciones": 4,
+    "tipo": "merienda",
+    "pasos": [
+      {
+        "texto": "Lavar el arroz bajo agua fria.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "En una olla, poner la leche con el azucar y opcionales.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Cuando rompa el hervor, agregar el arroz.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Cocinar a fuego bajo revolviendo cada tanto.",
+        "tiempo_minutos": 25
+      },
+      {
+        "texto": "Cuando este cremoso, retirar y servir frio o tibio.",
+        "tiempo_minutos": 2
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "arroz",
+        "cantidad": 200.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "leche",
+        "cantidad": 1.0,
+        "unidad": "l"
+      },
+      {
+        "nombre": "azucar",
+        "cantidad": 150.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "canela",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "cascara de limon",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "vainilla",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "nombre": "Arroz con pollo",
+    "dificultad": "facil",
+    "tiempo_minutos": 40,
+    "porciones": 4,
+    "tipo": "almuerzo",
+    "pasos": [
+      {
+        "texto": "Cortar el pollo en trozos medianos y salpimentar.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Picar la cebolla y el ajo finamente.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Sofreir la cebolla y el ajo en una olla con aceite hasta que esten transparentes.",
+        "tiempo_minutos": 4
+      },
+      {
+        "texto": "Agregar el pollo y dorar de todos lados.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Sumar el arroz, mezclar y agregar el agua caliente.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Tapar y cocinar a fuego bajo hasta que el arroz absorba el liquido.",
+        "tiempo_minutos": 20
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "pollo",
+        "cantidad": 500.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "arroz",
+        "cantidad": 300.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "cebolla",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "ajo",
+        "cantidad": 2.0,
+        "unidad": "dientes"
+      },
+      {
+        "nombre": "agua",
+        "cantidad": 600.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "aceite",
+        "cantidad": 2.0,
+        "unidad": "cdas"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "morron",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "zanahoria",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "perejil",
+        "cantidad": 0.0,
+        "unidad": "al gusto"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "nombre": "Atun con arroz",
+    "dificultad": "facil",
+    "tiempo_minutos": 20,
+    "porciones": 2,
+    "tipo": "almuerzo",
+    "pasos": [
+      {
+        "texto": "Cocinar el arroz en agua con sal hasta que este tierno.",
+        "tiempo_minutos": 14
+      },
+      {
+        "texto": "Picar la cebolla y sofreir en aceite.",
+        "tiempo_minutos": 4
+      },
+      {
+        "texto": "Agregar el atun escurrido y mezclar.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Servir sobre el arroz caliente.",
+        "tiempo_minutos": 1
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "arroz",
+        "cantidad": 200.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "cebolla",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "aceite",
+        "cantidad": 2.0,
+        "unidad": "cdas"
+      },
+      {
+        "nombre": "atun",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "morron",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "huevo",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "tomate",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "nombre": "Avena cocida",
+    "dificultad": "facil",
+    "tiempo_minutos": 10,
+    "porciones": 1,
+    "tipo": "desayuno",
+    "pasos": [
+      {
+        "texto": "Calentar la leche en una olla a fuego medio.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Cuando rompa el hervor, agregar la avena y bajar a fuego bajo.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Cocinar revolviendo hasta espesar.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Servir con frutas o miel por encima.",
+        "tiempo_minutos": 1
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "leche",
+        "cantidad": 250.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "azucar",
+        "cantidad": 1.0,
+        "unidad": "cda"
+      },
+      {
+        "nombre": "avena",
+        "cantidad": 60.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "canela",
+        "cantidad": 1.0,
+        "unidad": "pizca"
+      },
+      {
+        "nombre": "banana",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "miel",
+        "cantidad": 1.0,
+        "unidad": "cda"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "nombre": "Bananas con dulce de leche",
+    "dificultad": "facil",
+    "tiempo_minutos": 10,
+    "porciones": 2,
+    "tipo": "postres",
+    "pasos": [
+      {
+        "texto": "Cortar las bananas en rodajas o a lo largo.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Disponer en un plato y cubrir con dulce de leche.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Decorar con crema y nueces si se desea.",
+        "tiempo_minutos": 2
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "banana",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "dulce de leche",
+        "cantidad": 4.0,
+        "unidad": "cdas"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "canela",
+        "cantidad": 1.0,
+        "unidad": "pizca"
+      },
+      {
+        "nombre": "crema",
+        "cantidad": 100.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "nuez",
+        "cantidad": 30.0,
+        "unidad": "g"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "nombre": "Bife a caballo",
+    "dificultad": "facil",
+    "tiempo_minutos": 20,
+    "porciones": 1,
+    "tipo": "almuerzo",
+    "pasos": [
+      {
+        "texto": "Salpimentar el bife.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Calentar aceite en una sarten a fuego alto.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Sellar el bife 3 minutos de cada lado a fuego alto.",
+        "tiempo_minutos": 6
+      },
+      {
+        "texto": "Retirar el bife y mantener tibio.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "En la misma sarten, freir los huevos a fuego medio hasta clara firme.",
+        "tiempo_minutos": 4
+      },
+      {
+        "texto": "Servir el bife con los huevos encima.",
+        "tiempo_minutos": 1
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "pizca"
+      },
+      {
+        "nombre": "aceite",
+        "cantidad": 2.0,
+        "unidad": "cdas"
+      },
+      {
+        "nombre": "huevo",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "bife",
+        "cantidad": 250.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "ajo",
+        "cantidad": 1.0,
+        "unidad": "diente"
+      },
+      {
+        "nombre": "papa",
+        "cantidad": 300.0,
+        "unidad": "g"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "nombre": "Brownies",
+    "dificultad": "facil",
+    "tiempo_minutos": 45,
+    "porciones": 8,
+    "tipo": "postres",
+    "pasos": [
+      {
+        "texto": "Precalentar el horno a 180 grados.",
+        "tiempo_minutos": 10
+      },
+      {
+        "texto": "Derretir la manteca con el chocolate a bano maria a fuego bajo.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Mezclar con el azucar y dejar entibiar 5 minutos.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Agregar los huevos uno a uno, mezclando bien despues de cada uno.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Sumar la harina tamizada con movimientos envolventes hasta integrar.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Verter en un molde enmantecado y hornear a 180 grados hasta que la superficie este firme pero el centro humedo.",
+        "tiempo_minutos": 25
+      },
+      {
+        "texto": "Enfriar antes de cortar en cuadrados.",
+        "tiempo_minutos": 15
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "huevo",
+        "cantidad": 3.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "manteca",
+        "cantidad": 150.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "azucar",
+        "cantidad": 200.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "harina",
+        "cantidad": 120.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "chocolate",
+        "cantidad": 200.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "vainilla",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "nuez",
+        "cantidad": 100.0,
+        "unidad": "g"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "nombre": "Budin de limon",
+    "dificultad": "facil",
+    "tiempo_minutos": 60,
+    "porciones": 8,
+    "tipo": "postres",
+    "pasos": [
+      {
+        "texto": "Precalentar el horno a 180 grados.",
+        "tiempo_minutos": 10
+      },
+      {
+        "texto": "Batir manteca con azucar hasta blanquear.",
+        "tiempo_minutos": 4
+      },
+      {
+        "texto": "Sumar los huevos uno por uno integrando bien.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Agregar ralladura y jugo de limon.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Incorporar harina con polvo de hornear alternando con leche.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Verter en molde enmantecado y hornear a 180 grados hasta dorar.",
+        "tiempo_minutos": 40
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "huevo",
+        "cantidad": 3.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "limon",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "leche",
+        "cantidad": 100.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "manteca",
+        "cantidad": 150.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "azucar",
+        "cantidad": 200.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "harina",
+        "cantidad": 250.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "polvo de hornear",
+        "cantidad": 1.0,
+        "unidad": "cda"
+      }
+    ],
+    "ingredientes_opcionales": []
+  },
+  {
+    "id": 46,
+    "nombre": "Crepes salados",
+    "dificultad": "facil",
+    "tiempo_minutos": 35,
+    "porciones": 3,
+    "tipo": "cena",
+    "pasos": [
+      {
+        "texto": "Batir huevos, leche y sal. Sumar la harina sin grumos.",
+        "tiempo_minutos": 4
+      },
+      {
+        "texto": "Calentar una sarten con manteca a fuego medio.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Verter un cucharon de masa y cocinar 1 minuto por lado a fuego medio.",
+        "tiempo_minutos": 12
+      },
+      {
+        "texto": "Repetir hasta terminar la masa.",
+        "tiempo_minutos": 8
+      },
+      {
+        "texto": "Rellenar cada crepe con jamon y queso.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Calentar en sarten a fuego bajo hasta que el queso se derrita.",
+        "tiempo_minutos": 4
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "pizca"
+      },
+      {
+        "nombre": "huevo",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "queso",
+        "cantidad": 200.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "jamon",
+        "cantidad": 150.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "leche",
+        "cantidad": 400.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "manteca",
+        "cantidad": 30.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "harina",
+        "cantidad": 200.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "salsa blanca",
+        "cantidad": 200.0,
+        "unidad": "ml"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "nombre": "Empanadas de carne",
+    "dificultad": "media",
+    "tiempo_minutos": 70,
+    "porciones": 4,
+    "tipo": "almuerzo",
+    "pasos": [
+      {
+        "texto": "Picar la cebolla y el morron en cubos pequenos.",
+        "tiempo_minutos": 6
+      },
+      {
+        "texto": "Sofreir cebolla y morron en aceite a fuego medio hasta transparentes.",
+        "tiempo_minutos": 6
+      },
+      {
+        "texto": "Sumar la carne picada y cocinar a fuego alto hasta que pierda color rosado.",
+        "tiempo_minutos": 6
+      },
+      {
+        "texto": "Condimentar, retirar del fuego y dejar enfriar.",
+        "tiempo_minutos": 15
+      },
+      {
+        "texto": "Hervir los huevos a fuego medio hasta que esten duros y picarlos.",
+        "tiempo_minutos": 12
+      },
+      {
+        "texto": "Rellenar las tapas, cerrar haciendo el repulgue.",
+        "tiempo_minutos": 10
+      },
+      {
+        "texto": "Hornear a 200 grados hasta que esten doradas.",
+        "tiempo_minutos": 18
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "cebolla",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "aceite",
+        "cantidad": 2.0,
+        "unidad": "cdas"
+      },
+      {
+        "nombre": "morron",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "huevo",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "carne picada",
+        "cantidad": 500.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "tapas de empanadas",
+        "cantidad": 12.0,
+        "unidad": "unidades"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "aceitunas",
+        "cantidad": 50.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "pimenton",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "comino",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "nombre": "Empanadas de verdura",
+    "dificultad": "media",
+    "tiempo_minutos": 60,
+    "porciones": 4,
+    "tipo": "almuerzo",
+    "pasos": [
+      {
+        "texto": "Blanquear la espinaca en agua hirviendo a fuego alto.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Escurrir bien y picarla.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Sofreir cebolla picada a fuego medio en aceite hasta transparente.",
+        "tiempo_minutos": 6
+      },
+      {
+        "texto": "Mezclar espinaca, cebolla, queso, huevo y condimentos.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Dejar enfriar y rellenar las tapas haciendo el repulgue.",
+        "tiempo_minutos": 10
+      },
+      {
+        "texto": "Hornear a 200 grados hasta que esten doradas.",
+        "tiempo_minutos": 18
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "cebolla",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "aceite",
+        "cantidad": 2.0,
+        "unidad": "cdas"
+      },
+      {
+        "nombre": "huevo",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "queso",
+        "cantidad": 150.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "tapas de empanadas",
+        "cantidad": 12.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "espinaca",
+        "cantidad": 500.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "nuez moscada",
+        "cantidad": 1.0,
+        "unidad": "pizca"
+      },
+      {
+        "nombre": "salsa blanca",
+        "cantidad": 100.0,
+        "unidad": "ml"
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "nombre": "Ensalada de frutas",
+    "dificultad": "facil",
+    "tiempo_minutos": 15,
+    "porciones": 4,
+    "tipo": "postres",
+    "pasos": [
+      {
+        "texto": "Lavar y cortar todas las frutas en cubos.",
+        "tiempo_minutos": 8
+      },
+      {
+        "texto": "Mezclar en un bol grande.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Exprimir jugo de naranja por encima.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Si se desea, agregar azucar y jugo de limon.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Mezclar suavemente y servir frio.",
+        "tiempo_minutos": 1
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "banana",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "frutilla",
+        "cantidad": 200.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "manzana",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "naranja",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "limon",
+        "cantidad": 0.5,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "azucar",
+        "cantidad": 2.0,
+        "unidad": "cdas"
+      },
+      {
+        "nombre": "yogur",
+        "cantidad": 200.0,
+        "unidad": "g"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "nombre": "Ensalada de garbanzos",
+    "dificultad": "facil",
+    "tiempo_minutos": 15,
+    "porciones": 2,
+    "tipo": "almuerzo",
+    "pasos": [
+      {
+        "texto": "Escurrir y enjuagar los garbanzos.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Cortar el tomate y la cebolla en cubos pequenos.",
+        "tiempo_minutos": 4
+      },
+      {
+        "texto": "Mezclar todo en un bol.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Condimentar con aceite, vinagre y sal.",
+        "tiempo_minutos": 1
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "cebolla",
+        "cantidad": 0.5,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "pizca"
+      },
+      {
+        "nombre": "aceite",
+        "cantidad": 2.0,
+        "unidad": "cdas"
+      },
+      {
+        "nombre": "tomate",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "vinagre",
+        "cantidad": 1.0,
+        "unidad": "cda"
+      },
+      {
+        "nombre": "garbanzos",
+        "cantidad": 400.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "perejil",
+        "cantidad": 0.0,
+        "unidad": "al gusto"
+      },
+      {
+        "nombre": "limon",
+        "cantidad": 0.5,
+        "unidad": "unidad"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "nombre": "Ensalada mixta",
+    "dificultad": "facil",
+    "tiempo_minutos": 10,
+    "porciones": 2,
+    "tipo": "almuerzo",
+    "pasos": [
+      {
+        "texto": "Lavar y cortar la lechuga en trozos.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Cortar el tomate en cubos.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Cortar la cebolla en juliana fina.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Mezclar todo en un bol y condimentar con aceite, vinagre y sal.",
+        "tiempo_minutos": 2
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "cebolla",
+        "cantidad": 0.5,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "pizca"
+      },
+      {
+        "nombre": "aceite",
+        "cantidad": 2.0,
+        "unidad": "cdas"
+      },
+      {
+        "nombre": "tomate",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "lechuga",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "vinagre",
+        "cantidad": 1.0,
+        "unidad": "cda"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "zanahoria",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "huevo",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "nombre": "Fideos con manteca y queso",
+    "dificultad": "facil",
+    "tiempo_minutos": 15,
+    "porciones": 2,
+    "tipo": "cena",
+    "pasos": [
+      {
+        "texto": "Hervir los fideos en agua con sal.",
+        "tiempo_minutos": 9
+      },
+      {
+        "texto": "Escurrir y devolver a la olla.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Agregar la manteca y mezclar hasta que se derrita.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Sumar el queso rallado y servir.",
+        "tiempo_minutos": 1
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "fideos",
+        "cantidad": 250.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "queso rallado",
+        "cantidad": 80.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "manteca",
+        "cantidad": 60.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "perejil",
+        "cantidad": 0.0,
+        "unidad": "al gusto"
+      },
+      {
+        "nombre": "pimienta",
+        "cantidad": 1.0,
+        "unidad": "pizca"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "nombre": "Flan casero",
+    "dificultad": "media",
+    "tiempo_minutos": 55,
+    "porciones": 6,
+    "tipo": "postres",
+    "pasos": [
+      {
+        "texto": "Hacer caramelo: derretir 100 g de azucar en una sarten a fuego medio hasta que tome color dorado.",
+        "tiempo_minutos": 6
+      },
+      {
+        "texto": "Volcar el caramelo en un molde y dejar enfriar.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Batir los huevos con el resto del azucar y la vainilla.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Calentar la leche a fuego medio hasta casi hervir, sin que rompa el hervor.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Integrar la leche caliente con los huevos batiendo despacio.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Verter la mezcla sobre el caramelo y cocinar al horno a bano maria a 160 grados hasta que cuaje.",
+        "tiempo_minutos": 35
+      },
+      {
+        "texto": "Enfriar en la heladera antes de desmoldar.",
+        "tiempo_minutos": 120
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "huevo",
+        "cantidad": 4.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "leche",
+        "cantidad": 500.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "azucar",
+        "cantidad": 200.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "vainilla",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "crema",
+        "cantidad": 200.0,
+        "unidad": "ml"
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "nombre": "Galletas de avena",
+    "dificultad": "facil",
+    "tiempo_minutos": 30,
+    "porciones": 12,
+    "tipo": "postres",
+    "pasos": [
+      {
+        "texto": "Precalentar el horno a 180 grados.",
+        "tiempo_minutos": 10
+      },
+      {
+        "texto": "Mezclar la manteca blanda con el azucar.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Sumar el huevo y batir bien.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Incorporar avena, harina y opcionales.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Formar bolitas y aplastarlas sobre una placa.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Hornear a 180 grados hasta que los bordes esten dorados.",
+        "tiempo_minutos": 12
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "huevo",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "manteca",
+        "cantidad": 100.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "azucar",
+        "cantidad": 100.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "harina",
+        "cantidad": 100.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "avena",
+        "cantidad": 200.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "canela",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "chocolate",
+        "cantidad": 100.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "banana",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "nombre": "Guiso de lentejas",
+    "dificultad": "facil",
+    "tiempo_minutos": 50,
+    "porciones": 4,
+    "tipo": "almuerzo",
+    "pasos": [
+      {
+        "texto": "Remojar las lentejas 30 minutos si son secas.",
+        "tiempo_minutos": 30
+      },
+      {
+        "texto": "Picar todas las verduras en cubos.",
+        "tiempo_minutos": 6
+      },
+      {
+        "texto": "Sofreir la cebolla, zanahoria y morron en una olla.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Agregar las lentejas escurridas y la papa.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Cubrir con agua y cocinar a fuego medio.",
+        "tiempo_minutos": 35
+      },
+      {
+        "texto": "Salpimentar y servir.",
+        "tiempo_minutos": 1
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "cebolla",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "agua",
+        "cantidad": 1.0,
+        "unidad": "l"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "zanahoria",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "papa",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "lentejas",
+        "cantidad": 400.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "ajo",
+        "cantidad": 2.0,
+        "unidad": "dientes"
+      },
+      {
+        "nombre": "morron",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "chorizo",
+        "cantidad": 200.0,
+        "unidad": "g"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "nombre": "Hamburguesas caseras",
+    "dificultad": "facil",
+    "tiempo_minutos": 25,
+    "porciones": 3,
+    "tipo": "cena",
+    "pasos": [
+      {
+        "texto": "Picar la cebolla muy finamente.",
+        "tiempo_minutos": 4
+      },
+      {
+        "texto": "Mezclar la carne con la cebolla, huevo, pan rallado y sal.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Formar medallones del tamano deseado.",
+        "tiempo_minutos": 4
+      },
+      {
+        "texto": "Cocinar en una sarten o plancha 4 minutos por lado.",
+        "tiempo_minutos": 8
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "cebolla",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "huevo",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "pan rallado",
+        "cantidad": 50.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "carne picada",
+        "cantidad": 500.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "ajo",
+        "cantidad": 1.0,
+        "unidad": "diente"
+      },
+      {
+        "nombre": "perejil",
+        "cantidad": 0.0,
+        "unidad": "al gusto"
+      },
+      {
+        "nombre": "queso",
+        "cantidad": 100.0,
+        "unidad": "g"
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "nombre": "Helado casero de banana",
+    "dificultad": "facil",
+    "tiempo_minutos": 10,
+    "porciones": 2,
+    "tipo": "postres",
+    "pasos": [
+      {
+        "texto": "Pelar y cortar las bananas, congelarlas previamente.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Procesar las bananas congeladas con la leche.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Sumar miel y vainilla, procesar hasta cremoso.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Servir inmediatamente como helado blando o llevar al freezer 1 hora.",
+        "tiempo_minutos": 4
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "leche",
+        "cantidad": 100.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "vainilla",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "banana",
+        "cantidad": 3.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "miel",
+        "cantidad": 2.0,
+        "unidad": "cdas"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "chocolate",
+        "cantidad": 50.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "nuez",
+        "cantidad": 30.0,
+        "unidad": "g"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "nombre": "Huevos duros",
+    "dificultad": "facil",
+    "tiempo_minutos": 15,
+    "porciones": 2,
+    "tipo": "guarnicion",
+    "pasos": [
+      {
+        "texto": "Poner los huevos en una olla con agua fria que los cubra.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Llevar a hervor.",
+        "tiempo_minutos": 6
+      },
+      {
+        "texto": "Una vez que hierve, cocinar 8 minutos mas.",
+        "tiempo_minutos": 8
+      },
+      {
+        "texto": "Pasar a un bol con agua fria para detener la coccion.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Pelar y servir.",
+        "tiempo_minutos": 2
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "agua",
+        "cantidad": 1.0,
+        "unidad": "l"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "huevo",
+        "cantidad": 4.0,
+        "unidad": "unidades"
+      }
+    ],
+    "ingredientes_opcionales": []
+  },
+  {
+    "id": 15,
+    "nombre": "Huevos fritos",
+    "dificultad": "facil",
+    "tiempo_minutos": 8,
+    "porciones": 1,
+    "tipo": "desayuno",
+    "pasos": [
+      {
+        "texto": "Calentar el aceite en una sarten chica.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Romper los huevos directo en la sarten.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Cocinar a fuego medio hasta que la clara este firme.",
+        "tiempo_minutos": 4
+      },
+      {
+        "texto": "Salar y servir.",
+        "tiempo_minutos": 1
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "pizca"
+      },
+      {
+        "nombre": "aceite",
+        "cantidad": 2.0,
+        "unidad": "cdas"
+      },
+      {
+        "nombre": "huevo",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      }
+    ],
+    "ingredientes_opcionales": []
+  },
+  {
+    "id": 8,
+    "nombre": "Milanesas a la napolitana",
+    "dificultad": "media",
+    "tiempo_minutos": 45,
+    "porciones": 3,
+    "tipo": "almuerzo",
+    "pasos": [
+      {
+        "texto": "Batir los huevos con sal y pimienta.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Pasar las milanesas por huevo y luego por pan rallado.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Freir hasta dorar de ambos lados.",
+        "tiempo_minutos": 10
+      },
+      {
+        "texto": "Colocar las milanesas en una fuente.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Cubrir con salsa de tomate y queso.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Gratinar al horno hasta que el queso se derrita.",
+        "tiempo_minutos": 8
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "aceite",
+        "cantidad": 200.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "huevo",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "queso",
+        "cantidad": 200.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "salsa de tomate",
+        "cantidad": 200.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "carne",
+        "cantidad": 600.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "pan rallado",
+        "cantidad": 200.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "oregano",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "jamon",
+        "cantidad": 100.0,
+        "unidad": "g"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "nombre": "Mousse de chocolate",
+    "dificultad": "facil",
+    "tiempo_minutos": 20,
+    "porciones": 4,
+    "tipo": "postres",
+    "pasos": [
+      {
+        "texto": "Derretir el chocolate a bano maria a fuego bajo, revolviendo hasta que este liquido.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Separar las claras de las yemas.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Batir las claras con el azucar a punto nieve.",
+        "tiempo_minutos": 4
+      },
+      {
+        "texto": "Mezclar el chocolate tibio con las yemas.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Batir la crema a medio punto.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Integrar la crema y las claras al chocolate con movimientos envolventes.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Refrigerar al menos 2 horas antes de servir.",
+        "tiempo_minutos": 120
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "huevo",
+        "cantidad": 3.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "azucar",
+        "cantidad": 50.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "crema",
+        "cantidad": 300.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "chocolate",
+        "cantidad": 200.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "manteca",
+        "cantidad": 30.0,
+        "unidad": "g"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "nombre": "Noquis con salsa de tomate",
+    "dificultad": "media",
+    "tiempo_minutos": 60,
+    "porciones": 4,
+    "tipo": "almuerzo",
+    "pasos": [
+      {
+        "texto": "Hervir las papas con cascara en agua con sal a fuego medio hasta tiernas.",
+        "tiempo_minutos": 25
+      },
+      {
+        "texto": "Pelar y pisar las papas mientras esten calientes.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Mezclar con harina, huevo y sal hasta formar una masa.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Estirar tiras y cortar los noquis al tamano deseado.",
+        "tiempo_minutos": 10
+      },
+      {
+        "texto": "Hervir los noquis en agua con sal a fuego alto hasta que floten.",
+        "tiempo_minutos": 4
+      },
+      {
+        "texto": "Mezclar con la salsa caliente y servir.",
+        "tiempo_minutos": 2
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "papa",
+        "cantidad": 1.0,
+        "unidad": "kg"
+      },
+      {
+        "nombre": "huevo",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "salsa de tomate",
+        "cantidad": 500.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "harina",
+        "cantidad": 300.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "queso rallado",
+        "cantidad": 80.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "nuez moscada",
+        "cantidad": 1.0,
+        "unidad": "pizca"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "nombre": "Omelette",
+    "dificultad": "facil",
+    "tiempo_minutos": 10,
+    "porciones": 1,
+    "tipo": "cena",
+    "pasos": [
+      {
+        "texto": "Batir los huevos con sal.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Calentar manteca en una sarten antiadherente a fuego medio.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Verter los huevos y mover la sarten para distribuir.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Cuando este casi cuajado, agregar el relleno en la mitad.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Doblar y cocinar 30 segundos mas a fuego bajo.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Servir caliente.",
+        "tiempo_minutos": 1
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "pizca"
+      },
+      {
+        "nombre": "huevo",
+        "cantidad": 3.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "queso",
+        "cantidad": 50.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "manteca",
+        "cantidad": 15.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "perejil",
+        "cantidad": 0.0,
+        "unidad": "al gusto"
+      },
+      {
+        "nombre": "tomate",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "jamon",
+        "cantidad": 50.0,
+        "unidad": "g"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "nombre": "Panqueques dulces",
+    "dificultad": "facil",
+    "tiempo_minutos": 25,
+    "porciones": 4,
+    "tipo": "merienda",
+    "pasos": [
+      {
+        "texto": "Batir los huevos con la leche.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Agregar la harina de a poco para evitar grumos.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Calentar una sarten con manteca.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Verter un cucharon de masa y cocinar 1 minuto por lado.",
+        "tiempo_minutos": 15
+      },
+      {
+        "texto": "Rellenar con dulce de leche o lo que se prefiera.",
+        "tiempo_minutos": 3
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "pizca"
+      },
+      {
+        "nombre": "huevo",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "leche",
+        "cantidad": 500.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "harina",
+        "cantidad": 250.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "manteca",
+        "cantidad": 30.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "azucar",
+        "cantidad": 2.0,
+        "unidad": "cdas"
+      },
+      {
+        "nombre": "vainilla",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Pasta con salsa de tomate",
+    "dificultad": "facil",
+    "tiempo_minutos": 20,
+    "porciones": 2,
+    "tipo": "almuerzo",
+    "pasos": [
+      {
+        "texto": "Poner una olla con agua y sal a hervir.",
+        "tiempo_minutos": 8
+      },
+      {
+        "texto": "Cocinar la pasta segun las instrucciones del paquete.",
+        "tiempo_minutos": 9
+      },
+      {
+        "texto": "En una sarten, sofreir el ajo picado en aceite.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Agregar la salsa de tomate y cocinar a fuego bajo.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Escurrir la pasta y mezclar con la salsa.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Servir con queso rallado si se desea.",
+        "tiempo_minutos": 1
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "ajo",
+        "cantidad": 2.0,
+        "unidad": "dientes"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "aceite",
+        "cantidad": 2.0,
+        "unidad": "cdas"
+      },
+      {
+        "nombre": "fideos",
+        "cantidad": 250.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "salsa de tomate",
+        "cantidad": 400.0,
+        "unidad": "ml"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "cebolla",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "queso rallado",
+        "cantidad": 50.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "albahaca",
+        "cantidad": 0.0,
+        "unidad": "al gusto"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "nombre": "Pescado al horno",
+    "dificultad": "facil",
+    "tiempo_minutos": 35,
+    "porciones": 2,
+    "tipo": "almuerzo",
+    "pasos": [
+      {
+        "texto": "Precalentar el horno a 200 grados.",
+        "tiempo_minutos": 10
+      },
+      {
+        "texto": "Salpimentar el pescado y disponer en una fuente.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Mezclar aceite, jugo de limon, ajo picado y perejil.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Cubrir el pescado con la mezcla.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Hornear a 200 grados hasta que la carne se desprenda con el tenedor.",
+        "tiempo_minutos": 18
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "ajo",
+        "cantidad": 2.0,
+        "unidad": "dientes"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "aceite",
+        "cantidad": 3.0,
+        "unidad": "cdas"
+      },
+      {
+        "nombre": "perejil",
+        "cantidad": 0.0,
+        "unidad": "al gusto"
+      },
+      {
+        "nombre": "limon",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "pescado",
+        "cantidad": 400.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "papa",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "tomate",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "vino blanco",
+        "cantidad": 100.0,
+        "unidad": "ml"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "nombre": "Pizza casera",
+    "dificultad": "media",
+    "tiempo_minutos": 90,
+    "porciones": 4,
+    "tipo": "cena",
+    "pasos": [
+      {
+        "texto": "Disolver la levadura en agua tibia con una pizca de azucar.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Mezclar la harina con sal, agregar el agua con levadura y el aceite.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Amasar hasta obtener una masa lisa y elastica.",
+        "tiempo_minutos": 10
+      },
+      {
+        "texto": "Tapar y dejar leudar en un lugar tibio hasta que duplique el volumen.",
+        "tiempo_minutos": 45
+      },
+      {
+        "texto": "Precalentar el horno a 220 grados.",
+        "tiempo_minutos": 10
+      },
+      {
+        "texto": "Estirar la masa en una pizzera, cubrir con salsa de tomate y queso.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Hornear a 220 grados hasta que el queso se derrita y los bordes esten dorados.",
+        "tiempo_minutos": 12
+      },
+      {
+        "texto": "Agregar oregano antes de servir.",
+        "tiempo_minutos": 1
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "agua",
+        "cantidad": 300.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "aceite",
+        "cantidad": 2.0,
+        "unidad": "cdas"
+      },
+      {
+        "nombre": "queso",
+        "cantidad": 300.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "salsa de tomate",
+        "cantidad": 300.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "harina",
+        "cantidad": 500.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "levadura",
+        "cantidad": 25.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "morron",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "oregano",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "jamon",
+        "cantidad": 150.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "aceitunas",
+        "cantidad": 100.0,
+        "unidad": "g"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "nombre": "Pollo a la mostaza",
+    "dificultad": "facil",
+    "tiempo_minutos": 35,
+    "porciones": 3,
+    "tipo": "almuerzo",
+    "pasos": [
+      {
+        "texto": "Salpimentar el pollo y picar el ajo.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Sellar el pollo en aceite a fuego alto hasta dorar.",
+        "tiempo_minutos": 6
+      },
+      {
+        "texto": "Sumar el ajo y cocinar 1 minuto mas a fuego medio.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Mezclar la mostaza con la crema y verter sobre el pollo.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Bajar a fuego bajo, tapar y cocinar hasta que el pollo este tierno.",
+        "tiempo_minutos": 20
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "pollo",
+        "cantidad": 500.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "ajo",
+        "cantidad": 2.0,
+        "unidad": "dientes"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "aceite",
+        "cantidad": 2.0,
+        "unidad": "cdas"
+      },
+      {
+        "nombre": "crema",
+        "cantidad": 200.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "mostaza",
+        "cantidad": 4.0,
+        "unidad": "cdas"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "perejil",
+        "cantidad": 0.0,
+        "unidad": "al gusto"
+      },
+      {
+        "nombre": "miel",
+        "cantidad": 1.0,
+        "unidad": "cda"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "nombre": "Pollo a la parrilla",
+    "dificultad": "facil",
+    "tiempo_minutos": 30,
+    "porciones": 3,
+    "tipo": "cena",
+    "pasos": [
+      {
+        "texto": "Mezclar aceite, jugo de limon, ajo picado y condimentos.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Untar el pollo con la marinada y dejar reposar.",
+        "tiempo_minutos": 15
+      },
+      {
+        "texto": "Calentar la parrilla o plancha a fuego alto.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Cocinar el pollo a fuego alto hasta dorar de un lado.",
+        "tiempo_minutos": 6
+      },
+      {
+        "texto": "Dar vuelta y cocinar del otro lado hasta que este bien cocido.",
+        "tiempo_minutos": 6
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "pollo",
+        "cantidad": 600.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "ajo",
+        "cantidad": 3.0,
+        "unidad": "dientes"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "aceite",
+        "cantidad": 3.0,
+        "unidad": "cdas"
+      },
+      {
+        "nombre": "limon",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "oregano",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "pimenton",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "nombre": "Pollo a la plancha con ensalada",
+    "dificultad": "facil",
+    "tiempo_minutos": 25,
+    "porciones": 2,
+    "tipo": "almuerzo",
+    "pasos": [
+      {
+        "texto": "Salpimentar la pechuga de pollo.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Cocinar en una plancha caliente 5-6 minutos por lado.",
+        "tiempo_minutos": 12
+      },
+      {
+        "texto": "Mientras, preparar la ensalada con lechuga y tomate.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Servir el pollo con la ensalada y jugo de limon.",
+        "tiempo_minutos": 1
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "pollo",
+        "cantidad": 400.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "pizca"
+      },
+      {
+        "nombre": "aceite",
+        "cantidad": 2.0,
+        "unidad": "cdas"
+      },
+      {
+        "nombre": "tomate",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "lechuga",
+        "cantidad": 0.5,
+        "unidad": "unidad"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "zanahoria",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "limon",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "nombre": "Pollo al curry simple",
+    "dificultad": "facil",
+    "tiempo_minutos": 30,
+    "porciones": 3,
+    "tipo": "almuerzo",
+    "pasos": [
+      {
+        "texto": "Cortar el pollo en cubos y salpimentar.",
+        "tiempo_minutos": 4
+      },
+      {
+        "texto": "Picar cebolla y ajo.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Sofreir cebolla y ajo en aceite a fuego medio hasta transparentes.",
+        "tiempo_minutos": 4
+      },
+      {
+        "texto": "Sumar el pollo y dorar a fuego alto de todos los lados.",
+        "tiempo_minutos": 6
+      },
+      {
+        "texto": "Agregar el curry y mezclar bien 30 segundos.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Sumar la crema, bajar a fuego bajo y cocinar tapado.",
+        "tiempo_minutos": 12
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "pollo",
+        "cantidad": 500.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "cebolla",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "ajo",
+        "cantidad": 2.0,
+        "unidad": "dientes"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "aceite",
+        "cantidad": 2.0,
+        "unidad": "cdas"
+      },
+      {
+        "nombre": "crema",
+        "cantidad": 200.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "curry",
+        "cantidad": 2.0,
+        "unidad": "cdas"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "arroz",
+        "cantidad": 300.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "jengibre",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "Pollo al horno con papas",
+    "dificultad": "facil",
+    "tiempo_minutos": 60,
+    "porciones": 4,
+    "tipo": "almuerzo",
+    "pasos": [
+      {
+        "texto": "Precalentar el horno a 200 grados.",
+        "tiempo_minutos": 10
+      },
+      {
+        "texto": "Cortar las papas en gajos y disponer en una fuente.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Salpimentar el pollo y agregar ajo picado y jugo de limon.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Colocar el pollo sobre las papas y rociar con aceite.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Hornear hasta que el pollo este dorado.",
+        "tiempo_minutos": 45
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "pollo",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "ajo",
+        "cantidad": 4.0,
+        "unidad": "dientes"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "aceite",
+        "cantidad": 3.0,
+        "unidad": "cdas"
+      },
+      {
+        "nombre": "papa",
+        "cantidad": 800.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "limon",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "cebolla",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "oregano",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "nombre": "Pure de calabaza",
+    "dificultad": "facil",
+    "tiempo_minutos": 30,
+    "porciones": 4,
+    "tipo": "guarnicion",
+    "pasos": [
+      {
+        "texto": "Pelar y cortar la calabaza en cubos.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Hervir en agua con sal a fuego medio hasta tierna.",
+        "tiempo_minutos": 15
+      },
+      {
+        "texto": "Escurrir y pisar la calabaza.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Agregar manteca y leche caliente, mezclar bien.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Salpimentar y servir.",
+        "tiempo_minutos": 1
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "calabaza",
+        "cantidad": 800.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "leche",
+        "cantidad": 100.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "manteca",
+        "cantidad": 30.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "queso rallado",
+        "cantidad": 50.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "nuez moscada",
+        "cantidad": 1.0,
+        "unidad": "pizca"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "nombre": "Pure de papas",
+    "dificultad": "facil",
+    "tiempo_minutos": 25,
+    "porciones": 4,
+    "tipo": "guarnicion",
+    "pasos": [
+      {
+        "texto": "Pelar las papas y cortarlas en cubos.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Hervirlas en agua con sal hasta que esten tiernas.",
+        "tiempo_minutos": 18
+      },
+      {
+        "texto": "Escurrir y pisar las papas.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Agregar leche caliente y manteca, mezclar bien.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Salpimentar a gusto.",
+        "tiempo_minutos": 1
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "papa",
+        "cantidad": 1.0,
+        "unidad": "kg"
+      },
+      {
+        "nombre": "leche",
+        "cantidad": 200.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "manteca",
+        "cantidad": 50.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "queso",
+        "cantidad": 80.0,
+        "unidad": "g"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Revuelto de huevos con verduras",
+    "dificultad": "facil",
+    "tiempo_minutos": 15,
+    "porciones": 2,
+    "tipo": "cena",
+    "pasos": [
+      {
+        "texto": "Picar la cebolla y el tomate en cubos pequenos.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Calentar aceite en una sarten y sofreir la cebolla.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Agregar el tomate y cocinar.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Batir los huevos con sal y verter en la sarten.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Revolver suavemente hasta que cuajen.",
+        "tiempo_minutos": 4
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "cebolla",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "pizca"
+      },
+      {
+        "nombre": "aceite",
+        "cantidad": 1.0,
+        "unidad": "cda"
+      },
+      {
+        "nombre": "huevo",
+        "cantidad": 4.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "tomate",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "morron",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "perejil",
+        "cantidad": 0.0,
+        "unidad": "al gusto"
+      },
+      {
+        "nombre": "queso",
+        "cantidad": 50.0,
+        "unidad": "g"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "nombre": "Risotto de hongos",
+    "dificultad": "media",
+    "tiempo_minutos": 35,
+    "porciones": 3,
+    "tipo": "almuerzo",
+    "pasos": [
+      {
+        "texto": "Picar la cebolla, el ajo y los hongos en cubos pequenos.",
+        "tiempo_minutos": 6
+      },
+      {
+        "texto": "Sofreir cebolla y ajo en manteca a fuego medio hasta translucidos.",
+        "tiempo_minutos": 4
+      },
+      {
+        "texto": "Sumar los hongos y cocinar a fuego medio hasta que liberen su agua.",
+        "tiempo_minutos": 6
+      },
+      {
+        "texto": "Agregar el arroz y tostar a fuego medio hasta que este nacarado.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Ir agregando el caldo caliente de a poco, revolviendo, a fuego medio bajo.",
+        "tiempo_minutos": 18
+      },
+      {
+        "texto": "Cuando el arroz este al dente, retirar del fuego e integrar el queso rallado.",
+        "tiempo_minutos": 2
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "arroz",
+        "cantidad": 300.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "cebolla",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "ajo",
+        "cantidad": 2.0,
+        "unidad": "dientes"
+      },
+      {
+        "nombre": "queso rallado",
+        "cantidad": 80.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "manteca",
+        "cantidad": 30.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "champignon",
+        "cantidad": 250.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "caldo",
+        "cantidad": 1.0,
+        "unidad": "l"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "perejil",
+        "cantidad": 0.0,
+        "unidad": "al gusto"
+      },
+      {
+        "nombre": "vino blanco",
+        "cantidad": 100.0,
+        "unidad": "ml"
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "nombre": "Sandwich tostado de jamon y queso",
+    "dificultad": "facil",
+    "tiempo_minutos": 8,
+    "porciones": 1,
+    "tipo": "merienda",
+    "pasos": [
+      {
+        "texto": "Untar el pan con manteca por fuera.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Armar el sandwich con jamon y queso adentro.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Calentar una sarten o sandwichera a fuego medio.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Cocinar 2-3 minutos por lado a fuego medio hasta dorar y derretir el queso.",
+        "tiempo_minutos": 5
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "queso",
+        "cantidad": 80.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "jamon",
+        "cantidad": 80.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "manteca",
+        "cantidad": 15.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "pan",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "tomate",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "oregano",
+        "cantidad": 1.0,
+        "unidad": "pizca"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "nombre": "Sopa de calabaza",
+    "dificultad": "facil",
+    "tiempo_minutos": 30,
+    "porciones": 3,
+    "tipo": "cena",
+    "pasos": [
+      {
+        "texto": "Pelar y cortar la calabaza y la papa en cubos.",
+        "tiempo_minutos": 6
+      },
+      {
+        "texto": "Sofreir la cebolla picada en una olla.",
+        "tiempo_minutos": 4
+      },
+      {
+        "texto": "Agregar la calabaza y la papa, cubrir con agua.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Cocinar hasta que esten tiernas.",
+        "tiempo_minutos": 18
+      },
+      {
+        "texto": "Procesar todo hasta obtener una crema.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Salpimentar y servir.",
+        "tiempo_minutos": 1
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "cebolla",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "agua",
+        "cantidad": 800.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "papa",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "calabaza",
+        "cantidad": 600.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "ajo",
+        "cantidad": 1.0,
+        "unidad": "diente"
+      },
+      {
+        "nombre": "queso rallado",
+        "cantidad": 30.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "crema",
+        "cantidad": 100.0,
+        "unidad": "ml"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "nombre": "Sopa de pollo",
+    "dificultad": "facil",
+    "tiempo_minutos": 60,
+    "porciones": 4,
+    "tipo": "cena",
+    "pasos": [
+      {
+        "texto": "Cortar las verduras en cubos medianos.",
+        "tiempo_minutos": 6
+      },
+      {
+        "texto": "Poner el pollo y las verduras en una olla grande con el agua.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Llevar a hervor a fuego alto.",
+        "tiempo_minutos": 8
+      },
+      {
+        "texto": "Bajar a fuego medio y cocinar destapado hasta que el pollo este tierno.",
+        "tiempo_minutos": 35
+      },
+      {
+        "texto": "Retirar el pollo, deshuesarlo y devolver la carne a la olla.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Salpimentar, agregar fideos si se desea y cocinar 8 minutos mas a fuego medio.",
+        "tiempo_minutos": 8
+      },
+      {
+        "texto": "Servir caliente con perejil.",
+        "tiempo_minutos": 1
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "pollo",
+        "cantidad": 500.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "cebolla",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "agua",
+        "cantidad": 2.0,
+        "unidad": "l"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "zanahoria",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "apio",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "perejil",
+        "cantidad": 0.0,
+        "unidad": "al gusto"
+      },
+      {
+        "nombre": "papa",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "fideos",
+        "cantidad": 100.0,
+        "unidad": "g"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "nombre": "Sopa de verduras",
+    "dificultad": "facil",
+    "tiempo_minutos": 40,
+    "porciones": 4,
+    "tipo": "cena",
+    "pasos": [
+      {
+        "texto": "Pelar y cortar todas las verduras en cubos medianos.",
+        "tiempo_minutos": 8
+      },
+      {
+        "texto": "Rehogar la cebolla en una olla con aceite.",
+        "tiempo_minutos": 4
+      },
+      {
+        "texto": "Agregar el resto de las verduras y cubrir con agua.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Cocinar hasta que las verduras esten tiernas.",
+        "tiempo_minutos": 25
+      },
+      {
+        "texto": "Salpimentar y servir caliente.",
+        "tiempo_minutos": 1
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "cebolla",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "agua",
+        "cantidad": 1.5,
+        "unidad": "l"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "zanahoria",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "papa",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "calabaza",
+        "cantidad": 300.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "perejil",
+        "cantidad": 0.0,
+        "unidad": "al gusto"
+      },
+      {
+        "nombre": "fideos",
+        "cantidad": 100.0,
+        "unidad": "g"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "nombre": "Tallarines a la bolognesa",
+    "dificultad": "facil",
+    "tiempo_minutos": 45,
+    "porciones": 4,
+    "tipo": "almuerzo",
+    "pasos": [
+      {
+        "texto": "Picar cebolla, zanahoria y ajo finamente.",
+        "tiempo_minutos": 6
+      },
+      {
+        "texto": "Sofreir las verduras en una olla a fuego medio hasta tiernas.",
+        "tiempo_minutos": 6
+      },
+      {
+        "texto": "Sumar la carne y dorar a fuego alto hasta que pierda color rosado.",
+        "tiempo_minutos": 6
+      },
+      {
+        "texto": "Agregar la salsa de tomate y condimentos, cocinar a fuego bajo y tapado.",
+        "tiempo_minutos": 25
+      },
+      {
+        "texto": "Hervir los tallarines en agua con sal hasta que esten al dente.",
+        "tiempo_minutos": 9
+      },
+      {
+        "texto": "Servir la pasta con la salsa por encima y queso rallado.",
+        "tiempo_minutos": 1
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "cebolla",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "ajo",
+        "cantidad": 2.0,
+        "unidad": "dientes"
+      },
+      {
+        "nombre": "zanahoria",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "fideos",
+        "cantidad": 400.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "salsa de tomate",
+        "cantidad": 500.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "queso rallado",
+        "cantidad": 80.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "carne picada",
+        "cantidad": 500.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "oregano",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "vino tinto",
+        "cantidad": 100.0,
+        "unidad": "ml"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "nombre": "Tallarines a la carbonara",
+    "dificultad": "media",
+    "tiempo_minutos": 25,
+    "porciones": 3,
+    "tipo": "cena",
+    "pasos": [
+      {
+        "texto": "Hervir los tallarines en agua con sal a fuego alto hasta al dente.",
+        "tiempo_minutos": 9
+      },
+      {
+        "texto": "Cortar la panceta en cubitos y dorarla en una sarten a fuego medio.",
+        "tiempo_minutos": 6
+      },
+      {
+        "texto": "Sumar el ajo picado a la panceta y cocinar a fuego bajo 1 minuto mas.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Batir los huevos con el queso rallado y la pimienta.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Escurrir la pasta y mezclar inmediatamente con la panceta.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Fuera del fuego, integrar la mezcla de huevos revolviendo rapido para que no se cocinen.",
+        "tiempo_minutos": 2
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "ajo",
+        "cantidad": 2.0,
+        "unidad": "dientes"
+      },
+      {
+        "nombre": "huevo",
+        "cantidad": 4.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "fideos",
+        "cantidad": 300.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "queso rallado",
+        "cantidad": 100.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "pimienta",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "panceta",
+        "cantidad": 200.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "perejil",
+        "cantidad": 0.0,
+        "unidad": "al gusto"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "nombre": "Tarta de espinaca",
+    "dificultad": "facil",
+    "tiempo_minutos": 50,
+    "porciones": 4,
+    "tipo": "cena",
+    "pasos": [
+      {
+        "texto": "Lavar la espinaca y blanquearla en agua hirviendo a fuego alto.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Escurrirla bien y picarla.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Sofreir cebolla picada en una sarten a fuego medio.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Mezclar la espinaca con cebolla, huevos batidos, queso y crema.",
+        "tiempo_minutos": 4
+      },
+      {
+        "texto": "Verter sobre la tapa de tarta y hornear a 180 grados hasta dorar.",
+        "tiempo_minutos": 30
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "cebolla",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "huevo",
+        "cantidad": 3.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "queso",
+        "cantidad": 200.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "crema",
+        "cantidad": 100.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "espinaca",
+        "cantidad": 500.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "tapa de tarta",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "queso rallado",
+        "cantidad": 50.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "nuez moscada",
+        "cantidad": 1.0,
+        "unidad": "pizca"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "nombre": "Tarta de manzana",
+    "dificultad": "media",
+    "tiempo_minutos": 70,
+    "porciones": 6,
+    "tipo": "postres",
+    "pasos": [
+      {
+        "texto": "Precalentar el horno a 180 grados.",
+        "tiempo_minutos": 10
+      },
+      {
+        "texto": "Pelar y cortar las manzanas en laminas finas.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Mezclar las manzanas con azucar, canela y jugo de limon.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Colocar la tapa en una tartera y disponer las manzanas.",
+        "tiempo_minutos": 4
+      },
+      {
+        "texto": "Repartir trozos de manteca por encima y pintar los bordes con huevo.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Hornear a 180 grados hasta que la masa este dorada.",
+        "tiempo_minutos": 35
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "huevo",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "manteca",
+        "cantidad": 50.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "azucar",
+        "cantidad": 100.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "canela",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "tapa de tarta",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "manzana",
+        "cantidad": 4.0,
+        "unidad": "unidades"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "limon",
+        "cantidad": 0.5,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "nuez",
+        "cantidad": 50.0,
+        "unidad": "g"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "Tortilla de papas",
+    "dificultad": "facil",
+    "tiempo_minutos": 35,
+    "porciones": 3,
+    "tipo": "cena",
+    "pasos": [
+      {
+        "texto": "Pelar y cortar las papas en rodajas finas.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Picar la cebolla en juliana.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Freir las papas y la cebolla en aceite hasta que esten tiernas.",
+        "tiempo_minutos": 15
+      },
+      {
+        "texto": "Batir los huevos en un bol grande con sal.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Escurrir las papas y mezclarlas con los huevos.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Cocinar en sarten antiadherente 4 minutos por lado.",
+        "tiempo_minutos": 8
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "cebolla",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "aceite",
+        "cantidad": 100.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "papa",
+        "cantidad": 600.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "huevo",
+        "cantidad": 5.0,
+        "unidad": "unidades"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "queso",
+        "cantidad": 80.0,
+        "unidad": "g"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "nombre": "Tostadas francesas",
+    "dificultad": "facil",
+    "tiempo_minutos": 15,
+    "porciones": 2,
+    "tipo": "desayuno",
+    "pasos": [
+      {
+        "texto": "Batir huevos, leche, azucar y canela en un bol.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Sumergir cada rebanada de pan en la mezcla.",
+        "tiempo_minutos": 3
+      },
+      {
+        "texto": "Calentar manteca en una sarten a fuego medio.",
+        "tiempo_minutos": 2
+      },
+      {
+        "texto": "Cocinar las tostadas 2 minutos por lado a fuego medio hasta doradas.",
+        "tiempo_minutos": 8
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "huevo",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "leche",
+        "cantidad": 100.0,
+        "unidad": "ml"
+      },
+      {
+        "nombre": "manteca",
+        "cantidad": 30.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "azucar",
+        "cantidad": 2.0,
+        "unidad": "cdas"
+      },
+      {
+        "nombre": "pan",
+        "cantidad": 6.0,
+        "unidad": "unidades"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "canela",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "vainilla",
+        "cantidad": 1.0,
+        "unidad": "cdita"
+      },
+      {
+        "nombre": "miel",
+        "cantidad": 2.0,
+        "unidad": "cdas"
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "nombre": "Verduras al vapor",
+    "dificultad": "facil",
+    "tiempo_minutos": 15,
+    "porciones": 3,
+    "tipo": "guarnicion",
+    "pasos": [
+      {
+        "texto": "Lavar y cortar todas las verduras en trozos parejos.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Poner agua en una olla y llevar a hervor a fuego alto.",
+        "tiempo_minutos": 5
+      },
+      {
+        "texto": "Colocar las verduras en un colador sobre la olla y tapar.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Cocinar al vapor a fuego medio hasta que esten tiernas pero firmes.",
+        "tiempo_minutos": 8
+      },
+      {
+        "texto": "Servir con un chorro de aceite y sal.",
+        "tiempo_minutos": 1
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "sal",
+        "cantidad": 1.0,
+        "unidad": "pizca"
+      },
+      {
+        "nombre": "aceite",
+        "cantidad": 2.0,
+        "unidad": "cdas"
+      },
+      {
+        "nombre": "zanahoria",
+        "cantidad": 2.0,
+        "unidad": "unidades"
+      },
+      {
+        "nombre": "brocoli",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "calabacin",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "ajo",
+        "cantidad": 1.0,
+        "unidad": "diente"
+      },
+      {
+        "nombre": "limon",
+        "cantidad": 0.5,
+        "unidad": "unidad"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "nombre": "Yogur con granola y frutas",
+    "dificultad": "facil",
+    "tiempo_minutos": 5,
+    "porciones": 1,
+    "tipo": "desayuno",
+    "pasos": [
+      {
+        "texto": "Cortar la banana en rodajas.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Disponer el yogur en un bol.",
+        "tiempo_minutos": 1
+      },
+      {
+        "texto": "Cubrir con granola, fruta y miel.",
+        "tiempo_minutos": 2
+      }
+    ],
+    "origen": "base",
+    "ingredientes_esenciales": [
+      {
+        "nombre": "banana",
+        "cantidad": 1.0,
+        "unidad": "unidad"
+      },
+      {
+        "nombre": "miel",
+        "cantidad": 1.0,
+        "unidad": "cda"
+      },
+      {
+        "nombre": "yogur",
+        "cantidad": 200.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "granola",
+        "cantidad": 50.0,
+        "unidad": "g"
+      }
+    ],
+    "ingredientes_opcionales": [
+      {
+        "nombre": "nuez",
+        "cantidad": 30.0,
+        "unidad": "g"
+      },
+      {
+        "nombre": "frutilla",
+        "cantidad": 100.0,
+        "unidad": "g"
+      }
+    ]
+  }
+]

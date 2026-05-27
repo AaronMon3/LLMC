@@ -1,63 +1,69 @@
-const BASE = '/api';
+import {
+  seedSiVacia, obtenerTodas, obtenerPorId, listarMeta,
+  crear, borrar, listarIngredientesConocidos,
+} from './recipes/storage.js';
+import { buscarRecetas } from './recipes/search.js';
+import { parsearReceta, sugerirRecetas } from './recipes/llmAgents.js';
+import { parsearInputUsuario } from './recipes/normalizer.js';
 
-async function request(path, options = {}) {
-  const res = await fetch(`${BASE}${path}`, {
-    headers: { 'Content-Type': 'application/json', ...(options.headers || {}) },
-    ...options,
-  });
-  if (!res.ok) {
-    const detalle = await res.text();
-    throw new Error(`Error ${res.status}: ${detalle}`);
-  }
-  return res.json();
+let inicializado = null;
+function asegurarInit() {
+  if (!inicializado) inicializado = seedSiVacia();
+  return inicializado;
 }
 
 export const api = {
-  buscar(ingredientes, filtros = {}) {
-    return request('/recipes/search', {
-      method: 'POST',
-      body: JSON.stringify({ ingredientes, ...filtros }),
+  async buscar(ingredientes, filtros = {}) {
+    await asegurarInit();
+    const todas = await obtenerTodas();
+    const resultados = buscarRecetas(todas, {
+      ingredientes,
+      tiempoMax: filtros.tiempo_max ?? null,
+      dificultad: filtros.dificultad ?? null,
+      tipo: filtros.tipo ?? null,
+      incluirFaltantes: filtros.incluir_faltantes !== false,
+      excluir: filtros.excluir ?? [],
+      minMatch: filtros.min_match ?? 0.5,
+      modoAprovechar: filtros.modo_aprovechar ?? false,
     });
+    return { resultados, total: resultados.length };
   },
 
-  obtenerReceta(id) {
-    return request(`/recipes/${id}`);
+  async obtenerReceta(id) {
+    await asegurarInit();
+    const r = await obtenerPorId(id);
+    if (!r) throw new Error('Receta no encontrada');
+    return r;
   },
 
-  listarIngredientes() {
-    return request('/ingredients');
+  async listarRecetas(filtros = {}) {
+    await asegurarInit();
+    return listarMeta(filtros);
   },
 
-  listarRecetas(filtros = {}) {
-    const params = new URLSearchParams();
-    if (filtros.q) params.set('q', filtros.q);
-    if (filtros.tipo) params.set('tipo', filtros.tipo);
-    const qs = params.toString();
-    return request('/recipes' + (qs ? '?' + qs : ''));
+  async listarIngredientes() {
+    await asegurarInit();
+    return listarIngredientesConocidos();
   },
 
-  crearReceta(receta) {
-    return request('/recipes', {
-      method: 'POST',
-      body: JSON.stringify(receta),
-    });
+  async crearReceta(receta) {
+    await asegurarInit();
+    return crear(receta);
   },
 
-  borrarReceta(id) {
-    return request(`/recipes/${id}`, { method: 'DELETE' });
+  async borrarReceta(id) {
+    await asegurarInit();
+    return borrar(id);
   },
 
-  parsearReceta(texto, provider, apiKey) {
-    return request('/recipes/parse', {
-      method: 'POST',
-      body: JSON.stringify({ texto, provider, api_key: apiKey }),
-    });
+  async parsearReceta(texto, provider, apiKey) {
+    return parsearReceta(texto, provider, apiKey);
   },
 
-  sugerirRecetas(ingredientes, excluir, provider, apiKey, modoAprovechar = false) {
-    return request('/recipes/suggest', {
-      method: 'POST',
-      body: JSON.stringify({ ingredientes, excluir, provider, api_key: apiKey, modo_aprovechar: modoAprovechar }),
-    });
+  async sugerirRecetas(ingredientes, excluir, provider, apiKey, modoAprovechar = false) {
+    const recetas = await sugerirRecetas({ ingredientes, excluir, provider, apiKey, modoAprovechar });
+    return { recetas };
   },
+
+  parsearInputUsuario,
 };
