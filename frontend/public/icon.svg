@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="80" fill="#fbf3e1"/>
+  <text x="256" y="200" text-anchor="middle" font-family="Georgia, serif" font-size="280" fill="#c44d20" font-weight="700">🍳</text>
+  <text x="256" y="430" text-anchor="middle" font-family="Georgia, serif" font-size="78" fill="#3d2817" font-style="italic">cocinAI</text>
+</svg>

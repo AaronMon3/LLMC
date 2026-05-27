@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Node
+node_modules/
+dist/
+.svelte-kit/
+*.log
+
+# Database (regenerable con seed)
+backend/data/recetas.db
+backend/data/*.db-journal
+backend/data/*.db-wal
+backend/data/*.db-shm
+
+# Env / secrets
+.env
+.env.local
+*.local
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Configuracion de IDE/assistant local
+.claude/
+CLAUDE.md
+PROJECT.md
