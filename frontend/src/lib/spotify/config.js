@@ -1,6 +1,13 @@
+function detectarRedirectUri() {
+  if (typeof window === 'undefined') return 'llmc://spotify-callback';
+  const esCapacitor = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+  if (esCapacitor) return 'llmc://spotify-callback';
+  return `${window.location.origin}/spotify-callback`;
+}
+
 export const SPOTIFY_CONFIG = {
   clientId: 'cfe489856ad94103a41d6cb0bee1b8f1',
-  redirectUri: 'llmc://spotify-callback',
+  get redirectUri() { return detectarRedirectUri(); },
   scopes: [
     'user-read-private',
     'playlist-read-private',

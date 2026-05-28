@@ -41,9 +41,9 @@ jobs:
         working-directory: frontend
         run: npm install
 
-      - name: Build web bundle
+      - name: Build web bundle (mobile mode)
         working-directory: frontend
-        run: npm run build
+        run: npx vite build --mode mobile
 
       - name: Sync Capacitor Android
         working-directory: frontend
