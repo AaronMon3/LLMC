@@ -2,7 +2,9 @@
   import { navigate, volver } from '../router.js';
   import { api } from '../lib/api.js';
   import { preguntarAlChef } from '../lib/llm.js';
-  import { llmConfig, getKeyActiva, favoritos, toggleFavorito, agregarAlHistorial, PROVIDERS, porcionesObjetivo, historial, despensa, agregarALista } from '../stores.js';
+  import { llmConfig, getKeyActiva, favoritos, toggleFavorito, agregarAlHistorial, PROVIDERS, porcionesObjetivo, historial, despensa, agregarALista, spotifyConectado } from '../stores.js';
+  import { getPlaylists, getTopArtists, getTopTracks, webSpotify, deeplinkSpotify } from '../lib/spotify/api.js';
+  import { sugerirPlaylist } from '../lib/spotify/suggester.js';
   import { get } from 'svelte/store';
   import { formatearIngrediente, formatearTiempoPaso, extraerSenales } from '../lib/format.js';
 
@@ -93,6 +95,68 @@
   }
 
   let borrando = $state(false);
+
+  let spotifyOk = $state(false);
+  let playlistsUsuario = $state([]);
+  let playlistSeleccionada = $state('');
+  let cargandoPlaylists = $state(false);
+  let sugiriendoPlaylist = $state(false);
+  let playlistSugerida = $state(null);
+  let razonSugerencia = $state('');
+
+  $effect(() => {
+    const u = spotifyConectado.subscribe((v) => { spotifyOk = v; });
+    return u;
+  });
+
+  $effect(() => {
+    if (spotifyOk && playlistsUsuario.length === 0) {
+      cargandoPlaylists = true;
+      getPlaylists()
+        .then((items) => { playlistsUsuario = items; })
+        .catch(() => { playlistsUsuario = []; })
+        .finally(() => { cargandoPlaylists = false; });
+    }
+  });
+
+  function reproducirPlaylist(uri) {
+    if (!uri) return;
+    const deep = deeplinkSpotify(uri);
+    const web = webSpotify(uri);
+    if (deep) {
+      try { window.location.href = deep; return; } catch {}
+    }
+    if (web) window.open(web, '_blank');
+  }
+
+  async function sugerirMusica() {
+    if (!claveActual) {
+      alert('Configurá tu API key del LLM en Ajustes.');
+      return;
+    }
+    sugiriendoPlaylist = true;
+    playlistSugerida = null;
+    razonSugerencia = '';
+    try {
+      const [tracks, artistas] = await Promise.all([
+        getTopTracks().catch(() => []),
+        getTopArtists().catch(() => []),
+      ]);
+      const { playlist, razon } = await sugerirPlaylist({
+        topTracks: tracks,
+        topArtistas: artistas,
+        playlists: playlistsUsuario,
+        provider: config.provider,
+        apiKey: claveActual,
+      });
+      playlistSugerida = playlist;
+      razonSugerencia = razon;
+    } catch (e) {
+      alert('Error sugiriendo música: ' + e.message);
+    } finally {
+      sugiriendoPlaylist = false;
+    }
+  }
   async function borrarReceta() {
     if (!receta) return;
     const ok = confirm(`¿Borrar "${receta.nombre}" del recetario?\n\nEsta accion no se puede deshacer.`);
@@ -191,6 +255,60 @@
     <button class="btn btn-ghost" style="margin-top: 14px;" onclick={agregarFaltantesACompras}>
       {agregadoCompras ? '✓ Agregado a la lista' : '+ a lista de compras'}
     </button>
+  </div>
+
+  <div class="card">
+    <h3 style="font-family: 'Caveat', cursive; font-size: 24px; color: var(--primary);">
+      🎵 Música mientras cocinás
+    </h3>
+
+    {#if !spotifyOk}
+      <p class="muted small" style="margin: 0;">
+        Conectá tu cuenta de Spotify en <a href="#/settings">ajustes</a> para reproducir música.
+      </p>
+    {:else}
+      <hr class="divider" />
+
+      {#if cargandoPlaylists}
+        <p class="muted small">Cargando tus playlists…</p>
+      {:else if playlistsUsuario.length === 0}
+        <p class="muted small">No encontramos playlists en tu cuenta de Spotify.</p>
+      {:else}
+        <label class="small" for="playlist-select">Tus playlists</label>
+        <select id="playlist-select" class="input" bind:value={playlistSeleccionada}>
+          <option value="">elegí una…</option>
+          {#each playlistsUsuario as p}
+            <option value={p.uri}>{p.name} ({p.tracks?.total ?? 0} tracks)</option>
+          {/each}
+        </select>
+
+        <button class="btn btn-primary" style="margin-top: 10px;"
+                onclick={() => reproducirPlaylist(playlistSeleccionada)}
+                disabled={!playlistSeleccionada}>
+          🎵 Reproducir en Spotify
+        </button>
+
+        <hr class="divider" />
+
+        <button class="btn btn-secondary" onclick={sugerirMusica} disabled={sugiriendoPlaylist}>
+          {sugiriendoPlaylist ? 'Eligiendo…' : 'Sugerirme música según mis gustos'}
+        </button>
+
+        {#if playlistSugerida}
+          <div style="margin-top: 14px; padding: 12px 14px; background: var(--paper);
+                      border-left: 3px solid var(--primary); border-radius: 2px;">
+            <div style="font-weight: 600;">{playlistSugerida.name}</div>
+            {#if razonSugerencia}
+              <div class="small muted" style="margin-top: 4px;">{razonSugerencia}</div>
+            {/if}
+            <button class="btn btn-primary" style="margin-top: 10px;"
+                    onclick={() => reproducirPlaylist(playlistSugerida.uri)}>
+              🎵 Reproducir esta
+            </button>
+          </div>
+        {/if}
+      {/if}
+    {/if}
   </div>
 
   <div class="card">

@@ -1,7 +1,9 @@
 <script>
   import { get } from 'svelte/store';
   import { navigate, volver } from '../router.js';
-  import { llmConfig, PROVIDERS } from '../stores.js';
+  import { llmConfig, PROVIDERS, spotifyConectado } from '../stores.js';
+  import { iniciarLogin, cerrarSesion } from '../lib/spotify/auth.js';
+  import { getPerfil } from '../lib/spotify/api.js';
 
   const inicial = get(llmConfig);
   let provider = $state(inicial.provider || 'groq');
@@ -35,6 +37,38 @@
     const nuevasKeys = { ...keys, [provider]: '' };
     keys = nuevasKeys;
     llmConfig.set({ provider, keys: nuevasKeys });
+  }
+
+  let conectado = $state(false);
+  let perfilSpotify = $state(null);
+  let cargandoSpotify = $state(false);
+
+  $effect(() => {
+    const unsub = spotifyConectado.subscribe((v) => { conectado = v; });
+    return unsub;
+  });
+
+  $effect(() => {
+    if (conectado && !perfilSpotify) {
+      cargandoSpotify = true;
+      getPerfil()
+        .then((p) => { perfilSpotify = p; })
+        .catch(() => { perfilSpotify = null; })
+        .finally(() => { cargandoSpotify = false; });
+    } else if (!conectado) {
+      perfilSpotify = null;
+    }
+  });
+
+  function conectarSpotify() {
+    iniciarLogin().catch((e) => alert('Error: ' + e.message));
+  }
+
+  function desconectarSpotify() {
+    if (!confirm('¿Desconectar tu cuenta de Spotify?')) return;
+    cerrarSesion();
+    spotifyConectado.set(false);
+    perfilSpotify = null;
   }
 </script>
 
@@ -102,6 +136,45 @@
       <button class="btn btn-ghost" onclick={borrar}>Borrar</button>
     {/if}
   </div>
+</div>
+
+<div class="card">
+  <h3>🎵 Spotify</h3>
+  <p class="muted small">
+    Conectá tu cuenta para reproducir música mientras cocinás. Vemos tus playlists
+    para que las elijas desde acá. Tu cuenta se autentica directo con Spotify.
+  </p>
+
+  <hr class="divider" />
+
+  {#if conectado}
+    <div class="row" style="gap: 12px; align-items: center; padding: 10px 14px;
+                            background: var(--paper); border: 1px solid var(--paper-edge); border-radius: 2px;">
+      <div style="flex: 1;">
+        {#if perfilSpotify}
+          <div style="font-weight: 600;">{perfilSpotify.display_name || 'Conectado'}</div>
+          <div class="small muted" style="font-style: normal;">
+            {perfilSpotify.product === 'premium' ? 'Premium' : 'Free'}
+          </div>
+        {:else if cargandoSpotify}
+          <div class="muted small">Verificando cuenta...</div>
+        {:else}
+          <div class="muted small">Conectado</div>
+        {/if}
+      </div>
+      <span class="tag tag-green">✓ activo</span>
+    </div>
+    <button class="btn btn-ghost" onclick={desconectarSpotify} style="margin-top: 12px;">
+      Desconectar Spotify
+    </button>
+  {:else}
+    <button class="btn btn-primary" onclick={conectarSpotify}>
+      Conectar con Spotify
+    </button>
+    <p class="muted small" style="margin-top: 10px;">
+      Te va a abrir Spotify para autorizar el acceso. Después volvés acá automáticamente.
+    </p>
+  {/if}
 </div>
 
 <div class="card">

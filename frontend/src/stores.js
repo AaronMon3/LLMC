@@ -39,6 +39,9 @@ export const porcionesObjetivo = persistente('llmc_porciones_objetivo', 2);
 export const historialBusquedas = persistente('llmc_historial_busquedas', []);
 export const busquedasGuardadas = persistente('llmc_busquedas_guardadas', []);
 export const listaCompras = persistente('llmc_lista_compras', []);
+export const spotifyUrl = persistente('llmc_spotify_url', '');
+import { estaConectado as _spotifyConectado } from './lib/spotify/auth.js';
+export const spotifyConectado = writable(_spotifyConectado());
 
 export function agregarALista(items) {
   listaCompras.update((lista) => {

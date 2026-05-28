@@ -8,6 +8,8 @@
   import Favorites from './routes/Favorites.svelte';
   import All from './routes/All.svelte';
   import Compras from './routes/Compras.svelte';
+  import { intercambiarCodigoPorTokens } from './lib/spotify/auth.js';
+  import { spotifyConectado } from './stores.js';
 
   let current = $state({ path: '/', query: {} });
   $effect(() => {
@@ -16,6 +18,42 @@
   });
 
   let recipeParams = $derived(matchRoute('/recipe/:id', current.path));
+
+  async function manejarCallbackSpotify(url) {
+    try {
+      const u = new URL(url);
+      const code = u.searchParams.get('code');
+      const error = u.searchParams.get('error');
+      if (error) {
+        alert('Spotify rechazó la conexión: ' + error);
+        return;
+      }
+      if (!code) return;
+      await intercambiarCodigoPorTokens(code);
+      spotifyConectado.set(true);
+      navigate('/settings');
+    } catch (e) {
+      alert('Error conectando con Spotify: ' + e.message);
+    }
+  }
+
+  $effect(() => {
+    const intentar = async () => {
+      try {
+        const { App } = await import('@capacitor/app');
+        App.addListener('appUrlOpen', (data) => {
+          if (data?.url?.startsWith('llmc://spotify-callback')) {
+            manejarCallbackSpotify(data.url);
+          }
+        });
+      } catch {}
+    };
+    intentar();
+
+    if (window.location.pathname.includes('spotify-callback')) {
+      manejarCallbackSpotify(window.location.href);
+    }
+  });
 </script>
 
 <nav class="nav-top">
