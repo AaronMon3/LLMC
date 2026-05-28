@@ -23,13 +23,14 @@
     try {
       const u = new URL(url);
       const code = u.searchParams.get('code');
+      const state = u.searchParams.get('state');
       const error = u.searchParams.get('error');
       if (error) {
         alert('Spotify rechazó la conexión: ' + error);
         return;
       }
       if (!code) return;
-      await intercambiarCodigoPorTokens(code);
+      await intercambiarCodigoPorTokens(code, state);
       spotifyConectado.set(true);
       navigate('/settings');
     } catch (e) {
