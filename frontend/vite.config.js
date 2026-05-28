@@ -1,9 +1,9 @@
 import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 
-export default defineConfig(({ mode }) => ({
+export default defineConfig(({ command, mode }) => ({
   plugins: [svelte()],
-  base: mode === 'mobile' ? '/' : '/LLMC/',
+  base: command === 'build' && mode !== 'mobile' ? '/LLMC/' : '/',
   server: {
     port: 5173,
   },
