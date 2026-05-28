@@ -12,11 +12,16 @@
       img-src 'self' data: blob: https://i.scdn.co https://mosaic.scdn.co https://image-cdn-ak.spotifycdn.com https://image-cdn-fa.spotifycdn.com;
       connect-src 'self' https://api.spotify.com https://accounts.spotify.com https://api.anthropic.com https://api.openai.com https://api.groq.com;
       frame-src 'none';
+      frame-ancestors 'none';
       object-src 'none';
       base-uri 'self';
       form-action 'self';
       worker-src 'self';
+      upgrade-insecure-requests;
     " />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()" />
     <title>LLMC - Recetas con lo que tienes</title>
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="icon" type="image/png" href="/icon-192.png" />
