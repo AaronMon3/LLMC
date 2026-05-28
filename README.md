@@ -10,7 +10,7 @@ Asistente de cocina que sugiere recetas a partir de los ingredientes disponibles
 
 ## Sobre este proyecto
 
-LLMC es un **proyecto personal de aprendizaje y experimentación con modelos de lenguaje**. No es un producto comercial, no busca usuarios masivos, no tiene roadmap de monetización y no pretende competir con apps establecidas del mercado.
+LLMC es un **proyecto personal de experimentación con modelos de lenguaje**. No es un producto comercial, no busca usuarios masivos, no tiene roadmap de monetización y no pretende competir con apps establecidas del mercado.
 
 La motivación fue construir algo concreto y útil con LLMs siguiendo principios claros: cero costos de servidor, autonomía total del usuario sobre sus credenciales, lógica de búsqueda local, y uso del LLM solo donde aporta valor diferencial.
 
@@ -298,14 +298,6 @@ Si alguien quisiera redistribuir la aplicación oficialmente, los pasos serían:
 3. Modificar el workflow `build-android.yml` para decodificar el keystore en cada run y ejecutar `./gradlew assembleRelease` en lugar de `assembleDebug`.
 
 No se implementa en este repositorio porque está fuera del alcance del proyecto (uso personal / portfolio, no distribución pública).
-
-## Próximos pasos
-
-- Compartir recetas mediante link generado
-- Export e import de datos del usuario (recetas cargadas, favoritos, lista de compras)
-- Visión por computadora para detección de ingredientes a partir de imagen
-- Importación de recetas desde URL externa
-- Internacionalización
 
 ## Licencia
 
