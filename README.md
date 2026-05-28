@@ -2,7 +2,7 @@
 
 Asistente de cocina que sugiere recetas a partir de los ingredientes disponibles del usuario, combinando una base de recetas local con modelos de lenguaje opcionales (Anthropic, OpenAI, Groq).
 
-### [📥 Descargar APK Android (última versión)](https://github.com/AaronMon3/LLMC/releases/latest)
+### [🌐 Probar la aplicación online](https://aaronmon3.github.io/LLMC/) · [📥 Descargar APK Android](https://github.com/AaronMon3/LLMC/releases/latest)
 
 ---
 
