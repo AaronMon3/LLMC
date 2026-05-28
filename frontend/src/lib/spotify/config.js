@@ -2,7 +2,8 @@ function detectarRedirectUri() {
   if (typeof window === 'undefined') return 'llmc://spotify-callback';
   const esCapacitor = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
   if (esCapacitor) return 'llmc://spotify-callback';
-  return `${window.location.origin}/spotify-callback`;
+  const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
+  return `${window.location.origin}${base}/spotify-callback`;
 }
 
 export const SPOTIFY_CONFIG = {
