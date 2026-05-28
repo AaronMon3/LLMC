@@ -1,8 +1,8 @@
 <script>
   import { get } from 'svelte/store';
   import { navigate, volver } from '../router.js';
-  import { llmConfig, PROVIDERS, spotifyConectado } from '../stores.js';
-  import { iniciarLogin, cerrarSesion } from '../lib/spotify/auth.js';
+  import { llmConfig, PROVIDERS, spotifyConectado, recordarKeys, borrarTodosLosDatos } from '../stores.js';
+  import { iniciarLogin, cerrarSesion, migrarTokensSegunRecordar } from '../lib/spotify/auth.js';
   import { getPerfil } from '../lib/spotify/api.js';
 
   const inicial = get(llmConfig);
@@ -70,6 +70,37 @@
     spotifyConectado.set(false);
     perfilSpotify = null;
   }
+
+  let recordar = $state(false);
+  $effect(() => {
+    const u = recordarKeys.subscribe((v) => { recordar = v; });
+    return u;
+  });
+
+  function toggleRecordar(nuevo) {
+    recordar = nuevo;
+    recordarKeys.set(nuevo);
+    migrarTokensSegunRecordar();
+  }
+
+  let borrandoTodo = $state(false);
+  async function borrarTodo() {
+    const ok = confirm(
+      '¿BORRAR TODOS tus datos locales?\n\n' +
+      'Esto incluye: API keys, conexión Spotify, recetas cargadas, ' +
+      'favoritos, lista de compras, historial y despensa.\n\n' +
+      'Esta acción no se puede deshacer.'
+    );
+    if (!ok) return;
+    borrandoTodo = true;
+    try {
+      await borrarTodosLosDatos();
+      window.location.reload();
+    } catch (e) {
+      alert('Error: ' + e.message);
+      borrandoTodo = false;
+    }
+  }
 </script>
 
 <div class="row" style="margin-bottom: 16px;">
@@ -119,6 +150,25 @@
     Tu key se guarda solo en tu navegador, nunca pasa por nuestro servidor.
     Conseguila en <a href={info.urlKey} target="_blank" rel="noopener">{info.urlKey.replace('https://', '')}</a>.
   </p>
+
+  <div class="row" style="margin-top: 10px; padding: 10px 12px; background: #f3eedb; border-left: 3px solid var(--warning); border-radius: 2px; gap: 10px;">
+    <div class="small" style="color: var(--ink); flex: 1;">
+      <strong>⚠ Importante:</strong> tu API key queda en {recordar ? 'localStorage (persistente entre sesiones)' : 'sessionStorage (solo en esta pestaña)'}.
+      No uses esta app en computadoras compartidas con tu key personal.
+    </div>
+  </div>
+
+  <label class="row" style="margin-top: 10px; padding: 8px 4px; cursor: pointer; gap: 10px;">
+    <input type="checkbox" checked={recordar} onchange={(e) => toggleRecordar(e.target.checked)} style="margin: 0;" />
+    <div style="flex: 1;">
+      <div class="small" style="font-style: normal; color: var(--ink);">Recordar mi key entre sesiones</div>
+      <div class="small muted">
+        {recordar
+          ? 'Tu key sigue guardada aunque cierres el navegador'
+          : 'Tu key se borra al cerrar esta pestaña (más seguro)'}
+      </div>
+    </div>
+  </label>
 
   <input
     class="input"
@@ -187,6 +237,27 @@
     <li class="small">Pedirle dudas al chef durante la preparación</li>
     <li class="small">Generar variedad con la IA en los resultados</li>
   </ul>
+</div>
+
+<div class="card" style="border: 1px dashed var(--danger);">
+  <h3 style="color: var(--danger);">🗑 Borrar todos mis datos</h3>
+  <p class="small muted" style="margin: 0;">
+    Limpia <strong style="color: var(--ink);">absolutamente todo</strong> lo guardado en este navegador:
+  </p>
+  <ul class="recipe-list" style="margin-top: 8px;">
+    <li class="small">API keys de los proveedores LLM</li>
+    <li class="small">Conexión y tokens de Spotify</li>
+    <li class="small">Recetas cargadas o generadas por IA</li>
+    <li class="small">Favoritos, historial, despensa, restricciones</li>
+    <li class="small">Lista de compras y búsquedas guardadas</li>
+  </ul>
+  <p class="small muted" style="margin: 10px 0;">
+    Útil antes de prestar tu PC, o si querés empezar de cero.
+  </p>
+  <button class="btn btn-ghost" style="color: var(--danger); border-color: var(--danger);"
+          onclick={borrarTodo} disabled={borrandoTodo}>
+    {borrandoTodo ? 'Borrando…' : 'Borrar todo'}
+  </button>
 </div>
 
 <div class="card">

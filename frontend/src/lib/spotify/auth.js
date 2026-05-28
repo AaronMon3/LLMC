@@ -3,6 +3,30 @@ import { SPOTIFY_CONFIG } from './config.js';
 const STORAGE_KEY = 'llmc_spotify_tokens';
 const VERIFIER_KEY = 'llmc_spotify_verifier';
 const STATE_KEY = 'llmc_spotify_state';
+const RECORDAR_KEY = 'llmc_recordar_keys';
+
+function debeRecordar() {
+  try {
+    const raw = localStorage.getItem(RECORDAR_KEY);
+    return raw ? JSON.parse(raw) === true : false;
+  } catch {
+    return false;
+  }
+}
+
+function storageActivo() {
+  return debeRecordar() ? localStorage : sessionStorage;
+}
+
+function leerTokensRaw() {
+  try {
+    let raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) raw = sessionStorage.getItem(STORAGE_KEY);
+    return raw;
+  } catch {
+    return null;
+  }
+}
 
 function base64UrlEncode(bytes) {
   let str = '';
@@ -33,6 +57,19 @@ async function calcularCodeChallenge(verifier) {
 function limpiarFlowState() {
   localStorage.removeItem(VERIFIER_KEY);
   localStorage.removeItem(STATE_KEY);
+  sessionStorage.removeItem(VERIFIER_KEY);
+  sessionStorage.removeItem(STATE_KEY);
+}
+
+function guardarFlowItem(clave, valor) {
+  const storage = debeRecordar() ? localStorage : sessionStorage;
+  storage.setItem(clave, valor);
+  const otro = debeRecordar() ? sessionStorage : localStorage;
+  otro.removeItem(clave);
+}
+
+function leerFlowItem(clave) {
+  return localStorage.getItem(clave) || sessionStorage.getItem(clave);
 }
 
 export async function iniciarLogin() {
@@ -40,8 +77,8 @@ export async function iniciarLogin() {
   const challenge = await calcularCodeChallenge(verifier);
   const state = generarState();
 
-  localStorage.setItem(VERIFIER_KEY, verifier);
-  localStorage.setItem(STATE_KEY, state);
+  guardarFlowItem(VERIFIER_KEY, verifier);
+  guardarFlowItem(STATE_KEY, state);
 
   const params = new URLSearchParams({
     response_type: 'code',
@@ -57,8 +94,8 @@ export async function iniciarLogin() {
 }
 
 export async function intercambiarCodigoPorTokens(code, stateRecibido) {
-  const verifier = localStorage.getItem(VERIFIER_KEY);
-  const stateEsperado = localStorage.getItem(STATE_KEY);
+  const verifier = leerFlowItem(VERIFIER_KEY);
+  const stateEsperado = leerFlowItem(STATE_KEY);
 
   if (!verifier) {
     limpiarFlowState();
@@ -133,16 +170,35 @@ function guardarTokens(data) {
     token_type: data.token_type,
     scope: data.scope,
   };
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
+  const json = JSON.stringify(obj);
+  if (debeRecordar()) {
+    localStorage.setItem(STORAGE_KEY, json);
+    sessionStorage.removeItem(STORAGE_KEY);
+  } else {
+    sessionStorage.setItem(STORAGE_KEY, json);
+    localStorage.removeItem(STORAGE_KEY);
+  }
 }
 
 export function leerTokens() {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    const raw = leerTokensRaw();
     return raw ? JSON.parse(raw) : null;
   } catch {
     return null;
   }
+}
+
+export function migrarTokensSegunRecordar() {
+  const tokens = leerTokens();
+  if (!tokens) return;
+  guardarTokens({
+    access_token: tokens.access_token,
+    refresh_token: tokens.refresh_token,
+    expires_in: Math.max(0, Math.floor((tokens.expires_at - Date.now()) / 1000) + 30),
+    token_type: tokens.token_type,
+    scope: tokens.scope,
+  });
 }
 
 export function estaConectado() {
@@ -152,6 +208,7 @@ export function estaConectado() {
 
 export function cerrarSesion() {
   localStorage.removeItem(STORAGE_KEY);
+  sessionStorage.removeItem(STORAGE_KEY);
   limpiarFlowState();
 }
 
