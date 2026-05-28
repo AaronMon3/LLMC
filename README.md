@@ -2,9 +2,19 @@
 
 Asistente de cocina que sugiere recetas a partir de los ingredientes disponibles del usuario, combinando una base de recetas local con modelos de lenguaje opcionales (Anthropic, OpenAI, Groq).
 
-### [🌐 Probar la aplicación online](https://aaronmon3.github.io/LLMC/) · [📥 Descargar APK Android](https://github.com/AaronMon3/LLMC/releases/latest)
+### [📥 Descargar APK Android (recomendado)](https://github.com/AaronMon3/LLMC/releases/latest) · [🌐 Probar online](https://aaronmon3.github.io/LLMC/)
+
+> Para uso real se recomienda la APK porque vive en el dispositivo, no depende de cada visita al servidor y aprovecha el aislamiento por aplicación de Android. La versión web es más práctica para una prueba rápida sin instalar nada. Ver detalles en la sección [Seguridad y privacidad](#seguridad-y-privacidad).
 
 ---
+
+## Sobre este proyecto
+
+LLMC es un **proyecto personal de aprendizaje y experimentación con modelos de lenguaje**. No es un producto comercial, no busca usuarios masivos, no tiene roadmap de monetización y no pretende competir con apps establecidas del mercado.
+
+La motivación fue construir algo concreto y útil con LLMs siguiendo principios claros: cero costos de servidor, autonomía total del usuario sobre sus credenciales, lógica de búsqueda local, y uso del LLM solo donde aporta valor diferencial.
+
+Si a alguien le resulta útil en su día a día, mejor. Si no, sirvió como ejercicio práctico de diseño, arquitectura, integración con APIs externas (Spotify, proveedores LLM) y desarrollo cross-plataforma (web + APK).
 
 ## Descripción general
 
@@ -230,6 +240,64 @@ El repositorio incluye un workflow de GitHub Actions (`.github/workflows/build-a
 ### Instalación en dispositivo
 
 Habilitar "fuentes desconocidas" en el Android, transferir el APK y abrirlo. No requiere Play Store para distribución directa.
+
+## Seguridad y privacidad
+
+Por la naturaleza del proyecto (cliente sin servidor, API keys del usuario, integración con Spotify y proveedores LLM), se aplicaron medidas concretas de hardening y se documentan honestamente las limitaciones.
+
+### Datos del usuario y dónde viven
+
+- **API keys de LLM** (Groq / Claude / OpenAI) y **tokens de Spotify** se almacenan exclusivamente en el navegador del usuario o en el storage aislado de la APK. Nunca se transmiten a ningún backend propio del proyecto, porque no hay backend.
+- Por defecto se utilizan en `sessionStorage` (se eliminan al cerrar la pestaña). El usuario puede opt-in explícitamente a `localStorage` activando el toggle *"Recordar mi key"* en Ajustes.
+- Existe un botón *"Borrar todos mis datos"* que limpia localStorage, sessionStorage e IndexedDB de la aplicación.
+
+### Hardening aplicado
+
+- **Content Security Policy** estricta en `index.html` con `script-src 'self'`, `connect-src` whitelisteado a endpoints específicos (Spotify, Anthropic, OpenAI, Groq, Google Fonts), `frame-ancestors 'none'`, `object-src 'none'`.
+- **OAuth con PKCE** y validación de parámetro `state` en el callback de Spotify (mitiga CSRF en el flow de autorización).
+- **Sin secretos hardcodeados** ni en el código ni en el historial de Git. El Client ID de Spotify es público por diseño del estándar OAuth.
+- **Headers de seguridad** adicionales: `Referrer-Policy: strict-origin-when-cross-origin`, `X-Content-Type-Options: nosniff`, `Permissions-Policy` deshabilitando cámara, micrófono, geolocalización, pagos y USB.
+- **`allowBackup=false`** en el manifest Android para evitar que los datos de la aplicación se incluyan en backups automáticos de Google Drive.
+- **Renderizado seguro** por defecto: Svelte 5 escapa todo contenido dinámico, no se utiliza `{@html}` ni APIs equivalentes a `innerHTML` en ningún punto.
+
+### Comparación web vs APK
+
+Para uso continuo se recomienda la APK por estas razones:
+
+| Aspecto | APK Android | GitHub Pages |
+|---|---|---|
+| Determinismo | El código instalado es estable hasta que el usuario actualiza manualmente | Cada visita carga la versión actual del servidor |
+| Aislamiento de storage | Sandbox de la aplicación Android | Perfil del navegador, expuesto a otras pestañas y extensiones del mismo origen |
+| Extensiones del navegador | No aplica | Pueden leer contenido de la página y storage |
+| Compromiso del repositorio | Requiere build + publicación + instalación manual del usuario | Auto-deploy inmediato a todos los usuarios activos |
+
+La APK distribuida en Releases está **firmada con la debug keystore** estándar de Android. Esto es aceptable para un proyecto personal pero implica que el WebView puede inspeccionarse vía Chrome DevTools si alguien tiene acceso físico al dispositivo con USB debug. Para distribución a terceros se recomienda compilar localmente con una keystore propia (ver [Release signing](#release-signing-opcional)).
+
+### Limitaciones conocidas
+
+Las siguientes limitaciones son inherentes al modelo de SPA cliente y se documentan explícitamente:
+
+- **Extensiones maliciosas del navegador** pueden leer contenido de la página y storage. Esto afecta a cualquier aplicación web.
+- **Malware local** con acceso al perfil del navegador puede leer credenciales almacenadas.
+- **Browser sync** (Chrome / Edge) puede replicar localStorage a la nube del proveedor, dependiendo de la configuración del usuario.
+- **Confianza en el mantenedor**: el usuario que abre la versión web confía implícitamente en que el código deployado no es malicioso. El repositorio público y los workflows de CI permiten verificar que el deploy coincide con el código fuente.
+- **APK debug-signed**: distribución segura entre conocidos pero no es apta para canales públicos masivos.
+
+### Recomendaciones para el usuario
+
+- En computadoras compartidas o públicas: dejar el toggle *"Recordar mi key"* en OFF (default) y usar el botón *"Borrar todos mis datos"* antes de cerrar el navegador.
+- Para uso personal regular: instalar la APK en lugar de usar la versión web.
+- Revisar periódicamente las extensiones del navegador instaladas y sus permisos.
+
+### Release signing (opcional)
+
+Si alguien quisiera redistribuir la aplicación oficialmente, los pasos serían:
+
+1. Generar keystore propia: `keytool -genkey -v -keystore llmc-release.keystore -alias llmc -keyalg RSA -keysize 2048 -validity 10000`
+2. Almacenar keystore como GitHub Secret base64 (`KEYSTORE_BASE64`) + credenciales como secrets adicionales.
+3. Modificar el workflow `build-android.yml` para decodificar el keystore en cada run y ejecutar `./gradlew assembleRelease` en lugar de `assembleDebug`.
+
+No se implementa en este repositorio porque está fuera del alcance del proyecto (uso personal / portfolio, no distribución pública).
 
 ## Próximos pasos
 
