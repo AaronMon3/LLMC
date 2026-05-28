@@ -67,6 +67,30 @@ export const PROVIDERS = {
 // Toggle: ¿guardar API keys/tokens entre sesiones? Default: NO
 export const recordarKeys = persistente('llmc_recordar_keys', false);
 
+// 'claro' | 'oscuro' | 'auto' (sigue el sistema)
+export const tema = persistente('llmc_tema', 'auto');
+
+function aplicarTema(modo) {
+  if (typeof document === 'undefined') return;
+  let final = modo;
+  if (modo === 'auto') {
+    final = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'oscuro' : 'claro';
+  }
+  document.documentElement.setAttribute('data-theme', final === 'oscuro' ? 'dark' : 'light');
+}
+
+if (typeof window !== 'undefined') {
+  tema.subscribe(aplicarTema);
+  if (window.matchMedia) {
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    mq.addEventListener?.('change', () => {
+      const actual = get(tema);
+      if (actual === 'auto') aplicarTema('auto');
+    });
+  }
+}
+
 export const llmConfig = persistenteSensible('llmc_llm_config', {
   provider: 'groq',
   keys: { groq: '', claude: '', openai: '' },

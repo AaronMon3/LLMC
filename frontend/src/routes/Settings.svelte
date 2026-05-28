@@ -1,7 +1,7 @@
 <script>
   import { get } from 'svelte/store';
   import { navigate, volver } from '../router.js';
-  import { llmConfig, PROVIDERS, spotifyConectado, recordarKeys, borrarTodosLosDatos } from '../stores.js';
+  import { llmConfig, PROVIDERS, spotifyConectado, recordarKeys, borrarTodosLosDatos, tema } from '../stores.js';
   import { iniciarLogin, cerrarSesion, migrarTokensSegunRecordar } from '../lib/spotify/auth.js';
   import { getPerfil } from '../lib/spotify/api.js';
 
@@ -83,6 +83,12 @@
     migrarTokensSegunRecordar();
   }
 
+  let temaActual = $state('auto');
+  $effect(() => {
+    const u = tema.subscribe((v) => { temaActual = v; });
+    return u;
+  });
+
   let borrandoTodo = $state(false);
   async function borrarTodo() {
     const ok = confirm(
@@ -106,6 +112,30 @@
 <div class="row" style="margin-bottom: 16px;">
   <button class="icon-btn" onclick={() => volver('/')}>←</button>
   <h2 style="margin: 0;">Ajustes</h2>
+</div>
+
+<div class="card">
+  <h3>Apariencia</h3>
+  <p class="muted small">Elegí el tema visual de la aplicación.</p>
+
+  <hr class="divider" />
+
+  <div class="row" style="gap: 8px; flex-wrap: wrap;">
+    {#each [['claro', '☀ Claro'], ['oscuro', '☾ Oscuro'], ['auto', '✦ Auto']] as [valor, etiqueta]}
+      <button type="button" onclick={() => tema.set(valor)}
+              style="flex: 1; min-width: 90px; padding: 12px 14px;
+                     border: 1.5px solid {temaActual === valor ? 'var(--primary)' : 'var(--paper-edge)'};
+                     background: {temaActual === valor ? 'var(--paper)' : 'transparent'};
+                     border-radius: 2px; cursor: pointer; font: inherit; color: inherit;">
+        {etiqueta}
+      </button>
+    {/each}
+  </div>
+  {#if temaActual === 'auto'}
+    <p class="small muted" style="margin-top: 8px;">
+      Sigue la configuración de tu sistema operativo.
+    </p>
+  {/if}
 </div>
 
 <div class="card">

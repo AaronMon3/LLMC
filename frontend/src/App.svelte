@@ -58,14 +58,15 @@
 </script>
 
 <nav class="nav-top">
-  <button class="icon-btn" onclick={() => navigate('/')} title="Inicio" style="font-family: 'Caveat', cursive; font-size: 24px;">~</button>
-  <div class="title">LLMC</div>
+  <button class="title-btn" onclick={() => navigate('/')} title="Inicio">
+    <span class="title">LLMC</span>
+  </button>
   <div class="spacer"></div>
-  <button class="icon-btn" onclick={() => navigate('/all')} title="Todo el recetario">☰</button>
-  <button class="icon-btn" onclick={() => navigate('/favorites')} title="Favoritos">★</button>
-  <button class="icon-btn" onclick={() => navigate('/compras')} title="Lista de compras">🛒</button>
-  <button class="icon-btn" onclick={() => navigate('/upload')} title="Agregar receta">+</button>
-  <button class="icon-btn" onclick={() => navigate('/settings')} title="Ajustes">⚙</button>
+  <button class="icon-btn" onclick={() => navigate('/all')} title="Recetario completo" aria-label="Recetario">☰</button>
+  <button class="icon-btn" onclick={() => navigate('/favorites')} title="Favoritos" aria-label="Favoritos">★</button>
+  <button class="icon-btn" onclick={() => navigate('/compras')} title="Lista de compras" aria-label="Lista de compras">🛒</button>
+  <button class="icon-btn" onclick={() => navigate('/upload')} title="Agregar receta" aria-label="Agregar">+</button>
+  <button class="icon-btn" onclick={() => navigate('/settings')} title="Ajustes" aria-label="Ajustes">⚙</button>
 </nav>
 
 <main class="container">
